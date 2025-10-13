@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   portfolio:
     build:
@@ -22,3 +20,11 @@ services:
     networks:
       - web
       - internal
+
+networks:
+  web:
+    external: true
+    name: web
+  internal:
+    external: true
+    name: internal
