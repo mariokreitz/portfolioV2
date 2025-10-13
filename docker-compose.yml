@@ -4,12 +4,10 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        # Set this to "/" to serve at domain root, or "/portfolio/" when reverse-proxying at a sub-path
         BASE_HREF: "/"
     image: portfolio-v2:latest
     container_name: portfolio-v2
     ports:
-      # Host:Container
       - "8080:80"
     restart: unless-stopped
     healthcheck:
