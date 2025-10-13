@@ -24,7 +24,7 @@ services:
 networks:
   web:
     external: true
-    name: web
+    name: kreitz-infra_web
   internal:
     external: true
-    name: internal
+    name: kreitz-infra_internal
