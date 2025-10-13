@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Set this to "/" to serve at domain root, or "/portfolio/" when reverse-proxying at a sub-path
+        BASE_HREF: "/"
+    image: portfolio-v2:latest
+    container_name: portfolio-v2
+    ports:
+      # Host:Container
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost/ || exit 1" ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      - web
+      - internal

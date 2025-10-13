@@ -1,0 +1,17 @@
+# Exclude files/folders from Docker build context
+node_modules
+npm-debug.log
+Dockerfile*
+.dockerignore
+.git
+.gitignore
+.github
+.idea
+.vscode
+.dist
+coverage
+dist
+.tmp
+.angular
+**/*.tsbuildinfo
+
