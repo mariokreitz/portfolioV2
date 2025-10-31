@@ -1,3 +1,4 @@
+version: "3"
 services:
   portfolio:
     build:
@@ -7,8 +8,6 @@ services:
         BASE_HREF: "/"
     image: portfolio-v2:latest
     container_name: portfolio-v2
-    ports:
-      - "8080:80"
     restart: unless-stopped
     healthcheck:
       test: [ "CMD-SHELL", "wget -q --spider http://localhost/ || exit 1" ]
@@ -16,13 +15,8 @@ services:
       timeout: 5s
       retries: 3
     networks:
-      - web
-      - internal
+      - webproxy
 
 networks:
-  web:
+  webproxy:
     external: true
-    name: kreitz-infra_web
-  internal:
-    external: true
-    name: kreitz-infra_internal
