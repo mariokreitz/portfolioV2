@@ -1,14 +1,14 @@
 import { DOCUMENT, registerLocaleData } from '@angular/common';
 import { Component, inject, type OnInit } from '@angular/core';
-import { ActivatedRoute, type Data } from '@angular/router';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute, type Data, RouterOutlet } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { availableLanguages } from './core/constants/availableLanguages';
 import type { LanguageCode, LocaleData } from './core/models/app-language';
 
 @Component({
     selector: 'app-root',
     imports: [
-        TranslatePipe,
+        RouterOutlet,
     ],
     templateUrl: './app.html',
     styleUrl: './app.css',

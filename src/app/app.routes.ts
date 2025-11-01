@@ -1,6 +1,10 @@
 import type { Routes } from '@angular/router';
 
-const childRoutes: Routes = [];
+const childRoutes: Routes = [
+    {
+        path: '', loadComponent: () => import('./pages/home/home').then((m) => m.Home),
+    },
+];
 
 export const routes: Routes = [
     //Deutsch Routes
