@@ -23,7 +23,7 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "exactOptionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": false,
     "useUnknownInCatchVariables": true,
     "verbatimModuleSyntax": true,
     "resolveJsonModule": true,
