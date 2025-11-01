@@ -1,1 +1,5 @@
-<p>language-selector works!</p>
+@for (lang of languages; track $index) {
+	<button (click)="selectLanguage(lang)">
+		{{ lang | uppercase }}
+	</button>
+}

@@ -11,12 +11,13 @@ export class LangNavigatorService {
 
     public async navigateTo(language: LanguageCode): Promise<void> {
         const urlTree: UrlTree = this.router.parseUrl(this.router.url);
+
         const segments: string[] = urlTree.root.children['primary']?.segments.map((s: UrlSegment): string => s.path) || [];
 
         const urlWithoutLang: string[] = availableLanguagesCode.includes(segments[0] as LanguageCode) ? segments.slice(1) : segments;
 
         const fragment: string | undefined = urlTree.fragment ?? undefined;
-
+        
         const queryParams: Params = urlTree.queryParams;
 
         const newUrl: string[] = language !== 'de' ? [
