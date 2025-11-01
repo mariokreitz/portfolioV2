@@ -7,7 +7,5 @@ import { Component } from '@angular/core';
     styleUrl: './language-selector.css',
 })
 export class LanguageSelector {
-    // private readonly translate: TranslateService = inject(TranslateService);
-    // private readonly router: Router = inject(Router);
 
 }
