@@ -1,3 +1,6 @@
 {
-  "title": "Hallo Welt"
+  "app": {
+    "title": "Meine App",
+    "welcome": "Willkommen in Ihrer lokalisierten App"
+  }
 }
