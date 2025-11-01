@@ -45,9 +45,7 @@ export class App implements OnInit {
 
     public ngOnInit() {
         this.activatedRoute.data.pipe(take(1)).subscribe((data: Data) => {
-            console.log(data);
             const language: string = data['lang'] || this.translate.getBrowserLang() || 'en';
-            console.log(language);
             this.document.documentElement.lang = language;
             this.translate.use(language);
         });
