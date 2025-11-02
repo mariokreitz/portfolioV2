@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+:root {
+    color-scheme: dark light;
+}
+
+.dark {
+    color-scheme: dark;
+}
+
 body {
     @apply flex flex-col h-full;
 }
@@ -17,5 +25,5 @@ button, a {
 }
 
 .active {
-    @apply bg-sky-950
+    @apply bg-sky-950 dark:bg-sky-600
 }

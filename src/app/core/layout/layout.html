@@ -1,5 +1,5 @@
-<div class="flex flex-col content bg-white min-h-screen h-screen max-h-screen">
-	<nav class="px-2 py-4  mb-6 flex justify-between">
+<div class="flex flex-col content bg-white dark:bg-slate-900 dark:text-slate-100 min-h-screen h-screen max-h-screen">
+	<nav class="px-2 py-4 mb-6 flex justify-between items-center">
 		<nav>
 			<ul>
 				@for (item of navigationLinks; track item.label) {
@@ -14,7 +14,9 @@
 				}
 			</ul>
 		</nav>
-		<app-language-selector />
+		<div class="flex items-center">
+			<app-language-selector />
+		</div>
 	</nav>
 	<div class="flex flex-1 overflow-hidden">
 		<ng-content />
