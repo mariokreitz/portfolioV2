@@ -1,17 +1,34 @@
-<div class="relative">
-	<button (click)="toggleLanguageSelectionMenu()"
-					class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+<div class="relative inline-block text-left">
+	<button
+				(click)="toggleLanguageSelectionMenu()"
+				(keydown)="onToggleButtonKeydown($event)"
+				[attr.aria-expanded]="isLanguageSelectionOpen()"
+				aria-haspopup="menu"
+				class="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-gradient-to-r from-slate-900 via-purple-700 to-indigo-600 text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+				type="button"
+	>
 		<fa-icon [icon]="languageIcon" />
+		<span class="sr-only">{{ 'language-selector.button' | translate }}</span>
+		<span aria-hidden="true">{{ currentLanguage() | uppercase }}</span>
 	</button>
-	<div [class.hidden]="!isLanguageSelectionOpen()" class="absolute right-0 top-11">
-		@for (lang of languages; track lang) {
-			<a
-						(click)="selectLanguage(lang)"
-						[attr.hreflang]="'language-selector.options.' + lang | translate"
-						[attr.lang]="'language-selector.options.' + lang | translate"
-						[class.active]="lang === currentLanguage()"
-						class="block px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
-			>{{ "language-selector.options." + lang | translate }}</a>
-		}
-	</div>
+
+	@if (isLanguageSelectionOpen()) {
+		<div aria-label="{{ 'language-selector.menuLabel' | translate }}"
+				 class="absolute right-0 mt-2 w-40 rounded-md bg-white dark:bg-gray-800 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+				 role="menu">
+			@for (lang of languages; track lang) {
+				<a
+							(click)="selectLanguage(lang)"
+							(keydown)="onMenuItemKeydown($event, lang)"
+							[attr.aria-current]="lang === currentLanguage() ? 'true' : null"
+							class="block px-4 py-2 text-sm text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-gray-700 focus:bg-slate-100"
+							id="lang-option-{{ lang }}"
+							role="menuitem"
+							tabindex="0"
+				>
+					{{ ('language-selector.options.' + lang) | translate }}
+				</a>
+			}
+		</div>
+	}
 </div>
