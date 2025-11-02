@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import type { Url } from '../../core/models/navigation-item';
+import type { Route, Url } from '../../core/models/navigation-item';
 
 export type uuidType = ReturnType<typeof uuid>;
 
@@ -7,8 +7,9 @@ export type ProjectItem = {
     id: uuidType;
     name: string;
     description: string;
-    url?: Url;
+    url?: Url | Route;
+    imgSrc?: string;
     tags?: string[]
-    status: 'completed' | 'in-progress' | 'on-hold';
+    status: 'released' | 'in-progress' | 'on-hold';
     isFeatured?: boolean;
 };
