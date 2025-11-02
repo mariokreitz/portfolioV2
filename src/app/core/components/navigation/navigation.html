@@ -1,16 +1,17 @@
-<nav class="px-2 py-4 mb-6 flex justify-between items-center">
-	<ul>
+<nav class="px-4 py-4 mb-6 flex items-center justify-between bg-transparent">
+	<ul class="flex items-center gap-6">
 		@for (item of navigationLinks; track item.label) {
-			<li class="inline-block mr-4">
-				<fa-icon [icon]="item.icon" />
-				<a
-							(click)="navigateTo(item.link)"
-							class="hover:underline"
-				>{{ item.label | translate }}</a>
+			<li>
+				<button (click)="navigateTo(item.link)"
+								class="inline-flex items-center gap-2 text-sm font-medium text-slate-800 dark:text-white hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
+					<fa-icon [icon]="item.icon"></fa-icon>
+					<span>{{ item.label | translate }}</span>
+				</button>
 			</li>
 		}
 	</ul>
+
 	<div class="flex items-center">
-		<app-language-selector />
+		<app-language-selector></app-language-selector>
 	</div>
 </nav>
