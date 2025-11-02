@@ -15,4 +15,4 @@ export const availableLanguages: Readonly<Record<LanguageCode, LocaleData>> = {
     ],
 } as const;
 
-export const availableLanguagesCode: Array<LanguageCode> = Object.keys(availableLanguages) as Array<LanguageCode>;
+export const availableLanguagesCode: LanguageCode[] = Object.keys(availableLanguages) as LanguageCode[];

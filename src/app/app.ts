@@ -21,7 +21,7 @@ export class App implements OnInit {
     constructor() {
         this.translate.addLangs(Object.keys(availableLanguages));
 
-        (Object.entries(availableLanguages) as Array<[ LanguageCode, LocaleData ]>).forEach(
+        (Object.entries(availableLanguages) as [ LanguageCode, LocaleData ][]).forEach(
           ([ language, [ core, extra ] ]: [ LanguageCode, LocaleData ]) => {
               registerLocaleData(core, language, extra);
           },
