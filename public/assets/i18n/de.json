@@ -4,6 +4,8 @@
     "go-back": "Zurück zur Startseite"
   },
   "language-selector": {
+    "button": "Sprache ändern",
+    "menuLabel": "Sprache auswählen",
     "options": {
       "en": "Englisch",
       "de": "Deutsch"
