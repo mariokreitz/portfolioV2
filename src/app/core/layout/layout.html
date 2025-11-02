@@ -1,8 +1,8 @@
 <div class="flex flex-col content min-h-screen h-screen">
 	<app-navigation />
-	<div class="flex flex-1 overflow-hidden px-2 md:px-6 lg:px-12 py-4">
+	<main class="flex flex-1 overflow-hidden px-2 md:px-6 lg:px-12 py-4">
 		<ng-content />
-	</div>
+	</main>
 </div>
 @if (isUnderConstruction()) {
 	<app-under-construction-hint />
