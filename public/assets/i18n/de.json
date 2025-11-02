@@ -1,7 +1,11 @@
 {
   "app": {
-    "under-construction": "Diese Seite befindet sich im Aufbau.",
-    "go-back": "Zurück zur Startseite"
+    "page": {
+      "projects": {
+        "title": "Projekte"
+      }
+    },
+    "under-construction": "Diese Seite befindet sich im Aufbau."
   },
   "nav": {
     "home": "Startseite",
