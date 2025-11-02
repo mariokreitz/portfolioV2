@@ -5,6 +5,7 @@
 				[attr.aria-expanded]="isLanguageSelectionOpen()"
 				aria-haspopup="menu"
 				class="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-gradient-to-r from-slate-900 via-purple-700 to-indigo-600 text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+				id="toggle-btn"
 				type="button"
 	>
 		<fa-icon [icon]="languageIcon" />
@@ -14,14 +15,14 @@
 
 	@if (isLanguageSelectionOpen()) {
 		<div aria-label="{{ 'language-selector.menuLabel' | translate }}"
-				 class="absolute right-0 mt-2 w-40 rounded-md bg-white dark:bg-gray-800 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+				 class="absolute right-0 mt-2 w-40 rounded-md overflow-hidden bg-white dark:bg-gray-800 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
 				 role="menu">
 			@for (lang of languages; track lang) {
 				<a
 							(click)="selectLanguage(lang)"
 							(keydown)="onMenuItemKeydown($event, lang)"
 							[attr.aria-current]="lang === currentLanguage() ? 'true' : null"
-							class="block px-4 py-2 text-sm text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-gray-700 focus:bg-slate-100"
+							class="block px-4 py-2 text-sm text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-gray-700 focus:bg-slate-700"
 							id="lang-option-{{ lang }}"
 							role="menuitem"
 							tabindex="0"
