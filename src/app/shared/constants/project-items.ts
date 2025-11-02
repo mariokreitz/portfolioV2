@@ -7,13 +7,14 @@ export const projects: ProjectItem[] = [
         name: 'i18n-excel-manager',
         description: 'CLI tool for converting and validating i18n JSON and Excel files with placeholder validation',
         url: 'https://www.npmjs.com/package/i18n-excel-manager',
+        imgSrc: 'https://raw.githubusercontent.com/mariokreitz/i18n-excel-manager/refs/heads/main/Bildschirmfoto%202025-11-03%20um%2000.48.00.png',
         tags: [
             'i18n',
             'CLI-tool',
             'javascript',
             'converter',
         ],
-        status: 'in-progress',
+        status: 'released',
         isFeatured: true,
     },
 ];
