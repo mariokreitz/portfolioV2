@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
 import { Layout } from '../../core/layout/layout';
+import { PageHeadline } from '../../features/page-headline/page-headline';
+import { ProjectGrid } from '../../features/project-grid/project-grid';
 
 @Component({
     selector: 'app-projects',
     imports: [
         Layout,
-        TranslatePipe,
+        PageHeadline,
+        ProjectGrid,
     ],
     templateUrl: './projects.html',
     styleUrl: './projects.css',
