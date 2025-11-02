@@ -1,14 +1,13 @@
 <div class="flex flex-col content bg-white min-h-screen h-screen max-h-screen">
-	<nav class="px-2 py-4 bg-gray-100 dark:bg-gray-800 mb-6 flex justify-between">
+	<nav class="px-2 py-4  mb-6 flex justify-between">
 		<nav>
 			<ul>
 				@for (item of navigationLinks; track item.label) {
 					<li class="inline-block mr-4">
 						<fa-icon [icon]="item.icon" />
-
 						<a
 									(click)="navigateTo(item.link)"
-									class="text-blue-500 hover:underline"
+									class="hover:underline"
 						>{{ item.label | translate }}</a
 						>
 					</li>
