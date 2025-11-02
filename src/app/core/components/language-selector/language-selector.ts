@@ -2,7 +2,7 @@ import { Component, inject, type Signal, signal, type WritableSignal } from '@an
 import { FontAwesomeModule, type IconDefinition } from '@fortawesome/angular-fontawesome';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
-import { availableLanguagesCode } from '../../constants/availableLanguages';
+import { availableLanguagesCode } from '../../constants/available-languages';
 import type { LanguageCode } from '../../models/app-language';
 import { LangNavigatorService } from '../../services/lang-navigator';
 
@@ -24,11 +24,11 @@ export class LanguageSelector {
 
     private readonly langNavigator: LangNavigatorService = inject(LangNavigatorService);
     private readonly translate: TranslateService = inject(TranslateService);
-    
+
     public readonly currentLanguage: Signal<string> = signal(this.translate.getCurrentLang());
 
     public selectLanguage(lang: LanguageCode): void {
-        void this.langNavigator.navigateTo(lang);
+        void this.langNavigator.setLanguage(lang);
     }
 
     public toggleLanguageSelectionMenu(): void {
