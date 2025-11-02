@@ -2,7 +2,8 @@
   "app": {
     "page": {
       "projects": {
-        "title": "Projects"
+        "title": "Projects",
+        "no-projects": "No projects available."
       }
     },
     "under-construction": "This page is under construction."
