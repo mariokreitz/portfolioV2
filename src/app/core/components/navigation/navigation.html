@@ -1,0 +1,16 @@
+<nav class="px-2 py-4 mb-6 flex justify-between items-center">
+	<ul>
+		@for (item of navigationLinks; track item.label) {
+			<li class="inline-block mr-4">
+				<fa-icon [icon]="item.icon" />
+				<a
+							(click)="navigateTo(item.link)"
+							class="hover:underline"
+				>{{ item.label | translate }}</a>
+			</li>
+		}
+	</ul>
+	<div class="flex items-center">
+		<app-language-selector />
+	</div>
+</nav>
