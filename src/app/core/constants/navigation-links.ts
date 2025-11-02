@@ -4,12 +4,12 @@ import type { NavigationItem } from '../models/navigation-item';
 
 export const navigationLinks: NavigationItem[] = [
     {
-        label: 'Home',
+        label: 'nav.home',
         link: '/',
         icon: faHome,
     },
     {
-        label: 'Projects',
+        label: 'nav.projects',
         link: '/projects',
         icon: faProjectDiagram,
     },
