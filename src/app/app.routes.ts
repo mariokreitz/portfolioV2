@@ -4,6 +4,9 @@ const childRoutes: Routes = [
     {
         path: '', loadComponent: () => import('./pages/home/home').then((m) => m.Home),
     },
+    {
+        path: 'projects', loadComponent: () => import('./pages/projects/projects').then((m) => m.Projects),
+    },
 ];
 
 export const routes: Routes = [

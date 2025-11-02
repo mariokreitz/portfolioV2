@@ -2,7 +2,7 @@ import { DOCUMENT, registerLocaleData } from '@angular/common';
 import { Component, inject, type OnInit } from '@angular/core';
 import { ActivatedRoute, type Data, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { availableLanguages } from './core/constants/availableLanguages';
+import { availableLanguages } from './core/constants/available-languages';
 import type { LanguageCode, LocaleData } from './core/models/app-language';
 
 @Component({
