@@ -1,0 +1,8 @@
+<svg height="360" preserveAspectRatio="xMidYMid slice" viewBox="0 0 640 360" width="640" xmlns="http://www.w3.org/2000/svg">
+	<rect fill="#e2e8f0" height="100%" width="100%" />
+	<g fill="#94a3b8">
+		<rect height="280" rx="8" width="560" x="40" y="40" />
+	</g>
+	<text alignment-baseline="middle" fill="#475569" font-size="18" text-anchor="middle" x="50%" y="50%">Project thumbnail</text>
+</svg>
+
