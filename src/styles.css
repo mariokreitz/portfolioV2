@@ -1,13 +1,21 @@
 @import "tailwindcss";
 
+body {
+    @apply flex flex-col h-full;
+}
+
+body > * {
+    @apply grow;
+}
+
+.content {
+    @apply flex flex-col;
+}
+
 button, a {
     @apply cursor-pointer
 }
 
 .active {
     @apply bg-sky-950
-}
-
-.themed {
-    @apply bg-gray-100 text-black dark:bg-gray-900 dark:text-white;
 }
