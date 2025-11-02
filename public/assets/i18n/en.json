@@ -4,6 +4,8 @@
     "go-back": "Go back to the homepage"
   },
   "language-selector": {
+    "button": "Change Language",
+    "menuLabel": "Select Language",
     "options": {
       "en": "English",
       "de": "German"
