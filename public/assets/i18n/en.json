@@ -1,6 +1,11 @@
 {
   "app": {
-    "title": "My App",
-    "welcome": "Welcome to your localized app"
+    "welcome": "Welcome to our application!"
+  },
+  "language-selector": {
+    "options": {
+      "en": "English",
+      "de": "German"
+    }
   }
 }
