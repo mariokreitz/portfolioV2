@@ -3,6 +3,10 @@
     "under-construction": "Diese Seite befindet sich noch im Aufbau.",
     "go-back": "Zurück zur Startseite"
   },
+  "nav": {
+    "home": "Startseite",
+    "projects": "Projekte"
+  },
   "language-selector": {
     "button": "Sprache ändern",
     "menuLabel": "Sprache auswählen",
