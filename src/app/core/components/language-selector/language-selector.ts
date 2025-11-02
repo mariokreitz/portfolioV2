@@ -24,13 +24,14 @@ export class LanguageSelector {
 
     private readonly langNavigator: LangNavigatorService = inject(LangNavigatorService);
     private readonly translate: TranslateService = inject(TranslateService);
+    
     public readonly currentLanguage: Signal<string> = signal(this.translate.getCurrentLang());
 
     public selectLanguage(lang: LanguageCode): void {
         void this.langNavigator.navigateTo(lang);
     }
 
-    public toggleLanguageSelectionMenu() {
-        this._isLanguageSelectionOpen.update(prev => !prev);
+    public toggleLanguageSelectionMenu(): void {
+        this._isLanguageSelectionOpen.update((prev: boolean): boolean => !prev);
     }
 }
