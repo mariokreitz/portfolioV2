@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { LanguageSelector } from '../../core/components/language-selector/language-selector';
+import { Layout } from '../../core/layout/layout';
 
 @Component({
     selector: 'app-home',
     imports: [
         TranslatePipe,
-        LanguageSelector,
+        Layout,
     ],
     templateUrl: './home.html',
     styleUrl: './home.css',
