@@ -1,6 +1,7 @@
 {
   "app": {
-    "welcome": "Willkommen zu unserer Anwendung!"
+    "under-construction": "Diese Seite befindet sich noch im Aufbau.",
+    "go-back": "Zurück zur Startseite"
   },
   "language-selector": {
     "options": {
