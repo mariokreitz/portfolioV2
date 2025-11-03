@@ -4,6 +4,9 @@
       "projects": {
         "title": "Projekte",
         "no-projects": "Keine Projekte verfügbar."
+      },
+      "home": {
+        "profile-description": "Ich entwickle Barrierefreie, performante und skalierbare Webanwendungen mit Fokus auf Angular für CodeQuarter in Deutschland."
       }
     },
     "under-construction": "Diese Seite befindet sich im Aufbau."

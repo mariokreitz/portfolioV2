@@ -4,6 +4,9 @@
       "projects": {
         "title": "Projects",
         "no-projects": "No projects available."
+      },
+      "home": {
+        "profile-description": "I build accessible, performant, and maintainable web applications with a focus on Angular for CodeQuarter in germany."
       }
     },
     "under-construction": "This page is under construction."
