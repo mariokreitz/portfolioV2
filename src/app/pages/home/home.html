@@ -1,5 +1,18 @@
 <app-layout>
-	<h1 class="text-3xl font-bold underline">
-		{{ "app.under-construction" | translate }}
-	</h1>
+	<section class="max-w-3xl mx-auto w-full">
+		<div aria-label="Profile card for Mario Kreitz"
+				 aria-labelledby="profile-name"
+				 class="bg-white dark:bg-slate-800 shadow rounded-lg p-6 flex gap-6 items-start focus:outline-none focus:ring-4 focus:ring-indigo-300 dark:focus:ring-indigo-600"
+				 role="article"
+				 tabindex="0">
+			<img alt="Mario Kreitz — profile photo" class="w-30 h-30 rounded-full object-cover flex-shrink-0" height="120" loading="lazy"
+					 ngSrc="/assets/images/pb_mario.jpeg" width="120">
+
+			<div class="flex-1 min-w-0">
+				<h2 class="text-xl font-semibold text-slate-900 dark:text-white" id="profile-name">Mario Kreitz</h2>
+				<p class="text-sm text-slate-600 dark:text-slate-300 mt-1">Front-End Developer • Angular • TypeScript</p>
+				<p class="mt-3 text-sm text-slate-700 dark:text-slate-300">{{ "app.page.home.profile-description" |translate }}</p>
+			</div>
+		</div>
+	</section>
 </app-layout>
