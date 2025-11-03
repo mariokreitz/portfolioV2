@@ -49,7 +49,7 @@
     "@types/uuid": "^10.0.0",
     "angular-eslint": "20.4.0",
     "eslint": "^9.37.0",
-    "i18n-excel-manager": "^2.1.0",
+    "i18n-excel-manager": "^2.1.1",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
