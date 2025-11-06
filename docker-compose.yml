@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
       args:
         BASE_HREF: "/"
+        BUILD_ENV: "production"
     image: portfolio-v2:latest
     container_name: portfolio-v2
     restart: unless-stopped

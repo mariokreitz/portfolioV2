@@ -7,6 +7,8 @@ RUN npm ci --no-audit --no-fund
 COPY . .
 
 ARG BASE_HREF=/
+ARG BUILD_ENV=production
+ENV BUILD_ENV=${BUILD_ENV}
 ENV BASE_HREF=${BASE_HREF}
 
 RUN npm run build -- --base-href=${BASE_HREF}
