@@ -1,4 +1,4 @@
-import { Component, inject, input, type InputSignal } from '@angular/core';
+import { Component, inject, input, type InputSignal, type Signal } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Icon } from '../../../../../shared/components/icon/icon';
@@ -21,6 +21,7 @@ import { LanguageSelector } from '../../../language-selector/language-selector';
 export class DesktopNavigation {
     public readonly navigationLinks: InputSignal<NavigationItem[]> = input.required();
     private readonly langNavigator: LangNavigatorService = inject(LangNavigatorService);
+    protected readonly currentRoute: Signal<string> = this.langNavigator.currentRoute;
 
     public navigateTo(link: string): void {
         void this.langNavigator.navigateTo(link);
