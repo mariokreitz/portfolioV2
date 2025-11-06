@@ -1,1 +1,15 @@
-<p>desktop-navigation works!</p>
+<nav class="px-4 py-4 flex items-center justify-between">
+	<app-icon [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
+	<ul class="flex items-center gap-6">
+		@for (item of navigationLinks(); track item.label) {
+			<li>
+				<button (click)="navigateTo(item.link)"
+								class="inline-flex items-center gap-2 text-sm font-medium text-slate-800 dark:text-white hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
+					<fa-icon [icon]="item.icon"></fa-icon>
+					<span>{{ item.label | translate }}</span>
+				</button>
+			</li>
+		}
+	</ul>
+	<app-language-selector></app-language-selector>
+</nav>
