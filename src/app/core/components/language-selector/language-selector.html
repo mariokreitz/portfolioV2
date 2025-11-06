@@ -15,7 +15,7 @@
 
 	@if (isLanguageSelectionOpen()) {
 		<div aria-label="{{ 'language-selector.menuLabel' | translate }}"
-				 class="absolute right-0 mt-2 w-40 rounded-md overflow-hidden bg-white dark:bg-gray-800 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+				 class="absolute right-0 bottom-12 sm:bottom-auto sm:mt-2 w-40 rounded-md overflow-hidden bg-white dark:bg-gray-800 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
 				 role="menu">
 			@for (lang of languages; track lang) {
 				<a
