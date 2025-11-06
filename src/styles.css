@@ -25,5 +25,5 @@ button, a {
 }
 
 .active {
-    @apply bg-sky-950 dark:bg-sky-600
+    @apply bg-gradient-to-r from-slate-900 via-purple-700 to-indigo-600
 }
