@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input, type InputSignal, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input, type InputSignal, type Signal, signal } from '@angular/core';
 import { FaIconComponent, type IconDefinition } from '@fortawesome/angular-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
@@ -33,6 +33,7 @@ export class MobileNavigation {
     protected readonly ariaExpanded = computed(() => this.menuOpen());
 
     private readonly langNavigator: LangNavigatorService = inject(LangNavigatorService);
+    protected readonly currentRoute: Signal<string> = this.langNavigator.currentRoute;
 
     public toggleMenu(): void {
         this.menuOpen.update(v => !v);
