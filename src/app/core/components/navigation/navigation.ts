@@ -1,20 +1,15 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { TranslatePipe } from '@ngx-translate/core';
-import { Icon } from '../../../shared/components/icon/icon';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { navigationLinks } from '../../constants/navigation-links';
 import type { NavigationItem } from '../../models/navigation-item';
-import { LangNavigatorService } from '../../services/lang-navigator';
-import { LanguageSelector } from '../language-selector/language-selector';
+import { DesktopNavigation } from './components/desktop-navigation/desktop-navigation';
+import { MobileNavigation } from './components/mobile-navigation/mobile-navigation';
 
 @Component({
     selector: 'app-navigation',
     standalone: true,
     imports: [
-        FaIconComponent,
-        LanguageSelector,
-        TranslatePipe,
-        Icon,
+        MobileNavigation,
+        DesktopNavigation,
     ],
     templateUrl: './navigation.html',
     styleUrl: './navigation.css',
@@ -23,9 +18,4 @@ import { LanguageSelector } from '../language-selector/language-selector';
 export class Navigation {
     protected readonly navigationLinks: NavigationItem[] = navigationLinks;
 
-    private readonly langNavigator: LangNavigatorService = inject(LangNavigatorService);
-
-    public navigateTo(link: string): void {
-        void this.langNavigator.navigateTo(link);
-    }
 }
