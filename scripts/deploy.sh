@@ -1,4 +1,4 @@
-p#!/usr/bin/env bash
+#!/usr/bin/env bash
 # Stops the running container, removes the local image, pulls the latest image and starts via docker compose.
 # Usage: ./scripts/deploy.sh [TAG]
 # Example: ./scripts/deploy.sh latest
@@ -9,20 +9,52 @@ IFS=$'\n\t'
 # --- Configuration (edit if needed) ---
 CONTAINER_NAME="portfolio-v2"                      # container name used when running the app
 IMAGE_NAME="cqmariokreitz/portfoliov2"             # docker image repository/name
-COMPOSE_DIR="/opt/portfolio-v2"                    # directory on the server that contains docker-compose.yml
-COMPOSE_COMMAND="docker compose"                   # command to run docker compose (could be `docker-compose` or `docker compose`)
+COMPOSE_DIR="/opt/portfolioV2"                    # directory on the server that contains docker-compose.yml
+# Note: we will auto-detect whether to use 'docker compose' (Docker CLI v2) or 'docker-compose' (v1)
 # ---------------------------------------
 
 TAG="${1:-latest}"
 FULL_IMAGE="$IMAGE_NAME:$TAG"
 
-log() { printf '%s\n' "[$(date --iso-8601=seconds)] $*"; }
+# portable iso timestamp (works on both GNU date and BSD/macOS)
+_timestamp() { date -u +"%Y-%m-%dT%H:%M:%SZ"; }
+log() { printf '%s\n' "[$(_timestamp)] $*"; }
 err() { log "ERROR: $*" >&2; }
 
 if ! command -v docker >/dev/null 2>&1; then
   err "docker is not installed or not in PATH"
   exit 2
 fi
+
+# detect compose command
+COMPOSE_TOOL=""
+if docker compose version >/dev/null 2>&1; then
+  COMPOSE_TOOL="docker"
+  log "Using 'docker compose' (Docker CLI v2)"
+elif command -v docker-compose >/dev/null 2>&1; then
+  COMPOSE_TOOL="docker-compose"
+  log "Using 'docker-compose' (legacy docker-compose)"
+else
+  err "Neither 'docker compose' nor 'docker-compose' are available. Install docker-compose or upgrade Docker CLI."
+  exit 5
+fi
+
+# helper wrappers
+compose_pull() {
+  if [ "$COMPOSE_TOOL" = "docker" ]; then
+    docker compose pull --ignore-pull-failures
+  else
+    docker-compose pull --ignore-pull-failures
+  fi
+}
+
+compose_up() {
+  if [ "$COMPOSE_TOOL" = "docker" ]; then
+    docker compose up -d --remove-orphans
+  else
+    docker-compose up -d --remove-orphans
+  fi
+}
 
 if [ ! -d "$COMPOSE_DIR" ]; then
   err "compose directory '$COMPOSE_DIR' does not exist. Adjust COMPOSE_DIR in the script or create this directory on the server."
@@ -55,18 +87,17 @@ if [ ! -f "docker-compose.yml" ] && [ ! -f "docker-compose.yaml" ]; then
   exit 4
 fi
 
-log "Updating services with docker compose"
-if ! $COMPOSE_COMMAND pull --ignore-pull-failures; then
-  log "docker compose pull returned non-zero (continuing)"
+log "Updating services with compose (using $COMPOSE_TOOL)"
+if ! compose_pull; then
+  log "compose pull returned non-zero (continuing)"
 fi
 
-$COMPOSE_COMMAND up -d --remove-orphans
+compose_up
 
 sleep 2
 log "Container status for '$CONTAINER_NAME':"
-docker ps --filter "name=^/${CONTAINER_NAME}$" --format 'table {{.Names}}	{{.Status}}	{{.Ports}}'
+docker ps --filter "name=^/${CONTAINER_NAME}$" --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 
 log "Deploy finished successfully"
 
 exit 0
-
