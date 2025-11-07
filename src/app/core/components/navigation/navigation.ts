@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { navigationLinks } from '../../constants/navigation-links';
+import { navigationLinks, socialLinks } from '../../constants/navigation-links';
 import type { NavigationItem } from '../../models/navigation-item';
 import { DesktopNavigation } from './components/desktop-navigation/desktop-navigation';
 import { MobileNavigation } from './components/mobile-navigation/mobile-navigation';
@@ -17,5 +17,6 @@ import { MobileNavigation } from './components/mobile-navigation/mobile-navigati
 })
 export class Navigation {
     protected readonly navigationLinks: NavigationItem[] = navigationLinks;
+    protected readonly socialLinks: NavigationItem[] = socialLinks;
 
 }
