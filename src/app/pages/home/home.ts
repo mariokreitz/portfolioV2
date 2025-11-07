@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, type Signal, signal } from '@angula
 import { TranslatePipe } from '@ngx-translate/core';
 import { Layout } from '../../core/layout/layout';
 import { FeaturedProject } from '../../features/featured-project/featured-project';
+import { SectionHeadline } from '../../shared/components/section-headline/section-headline';
 import { featuredProjectsConfig } from '../../shared/configs/featured-projects';
 import { projects } from '../../shared/constants/project-items';
 import type { FeaturedProjectsConfig } from '../../shared/models/configs';
@@ -13,6 +14,7 @@ import type { ProjectItem } from '../../shared/models/project-item';
         Layout,
         TranslatePipe,
         FeaturedProject,
+        SectionHeadline,
 
     ],
     templateUrl: './home.html',
