@@ -17,7 +17,7 @@ body > * {
 }
 
 .content {
-    @apply flex flex-col;
+    @apply flex flex-col w-full;
 }
 
 button, a {
@@ -26,4 +26,8 @@ button, a {
 
 .active {
     @apply bg-gradient-to-r from-slate-900 via-purple-700 to-indigo-600
+}
+
+.project-tag {
+    @apply text-xs bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-full px-2 py-1 mr-2
 }
