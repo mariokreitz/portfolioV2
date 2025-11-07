@@ -20,6 +20,8 @@ import { LanguageSelector } from '../../../language-selector/language-selector';
 })
 export class DesktopNavigation {
     public readonly navigationLinks: InputSignal<NavigationItem[]> = input.required();
+    public readonly socialLinks: InputSignal<NavigationItem[] | undefined> = input();
+
     private readonly langNavigator: LangNavigatorService = inject(LangNavigatorService);
     protected readonly currentRoute: Signal<string> = this.langNavigator.currentRoute;
 

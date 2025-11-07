@@ -1,8 +1,8 @@
-<nav class="px-4 py-4 flex items-center justify-between">
+<nav aria-label="{{ 'navigation.wcag.nav' | translate }}" class="px-4 py-4 flex items-center justify-between">
 	<app-icon [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
-	<ul class="flex items-center gap-6">
+	<ul aria-label="{{ 'navigation.wcag.links' | translate }}" class="flex items-center gap-6">
 		@for (item of navigationLinks(); track item.label) {
-			<li>
+			<li aria-label="{{ item.label | translate }}">
 				<a (click)="navigateTo(item.link)"
 					 [class.active]="currentRoute() === item.link ? 'aria-current' : null"
 					 class="w-full text-left inline-flex items-center gap-2 text-base transition-colors font-medium text-slate-800 dark:text-white hover:bg-slate-200/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded py-2 px-2">
@@ -12,5 +12,24 @@
 			</li>
 		}
 	</ul>
-	<app-language-selector></app-language-selector>
+	<div class="flex gap-4 items-center">
+		<app-language-selector></app-language-selector>
+		@if (socialLinks()) {
+			<ul aria-label="{{ 'navigation.social' | translate }}" class="flex items-center gap-3">
+				@for (item of socialLinks(); track item.label) {
+					<li>
+						<a [attr.aria-label]="'Open ' + (item.label | translate) + ' (opens in a new tab)'"
+							 [href]="item.link"
+							 class="inline-flex items-center justify-center p-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 text-slate-700 dark:text-slate-200 hover:text-indigo-300 transition-colors"
+							 rel="noopener noreferrer"
+							 target="_blank"
+						>
+							<fa-icon [icon]="item.icon" aria-hidden="true" class="text-2xl"></fa-icon>
+							<span class="sr-only">{{ item.label | translate }}, opens in a new tab</span>
+						</a>
+					</li>
+				}
+			</ul>
+		}
+	</div>
 </nav>
