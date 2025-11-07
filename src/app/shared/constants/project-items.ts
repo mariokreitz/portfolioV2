@@ -17,4 +17,19 @@ export const projects: ProjectItem[] = [
         status: 'released',
         isFeatured: true,
     },
+    {
+        id: uuid(),
+        name: 'Portfolio',
+        description: 'Portfolio V2 made in Angular v20+ following WCAG and i18n',
+        url: 'https://www.github.com/mariokreitz/portfolioV2',
+        imgSrc: 'assets/images/placeholder-project.svg',
+        tags: [
+            'i18n',
+            'docker',
+            'nginx',
+            'angular',
+        ],
+        status: 'in-progress',
+        isFeatured: true,
+    },
 ];
