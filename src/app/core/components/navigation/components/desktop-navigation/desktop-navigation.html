@@ -1,5 +1,7 @@
 <nav aria-label="{{ 'navigation.wcag.nav' | translate }}" class="px-4 py-4 flex items-center justify-between">
-	<app-icon [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
+	<a [href]="'/'" class="inline-flex items-center focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
+		<app-icon [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
+	</a>
 	<ul aria-label="{{ 'navigation.wcag.links' | translate }}" class="flex items-center gap-6">
 		@for (item of navigationLinks(); track item.label) {
 			<li aria-label="{{ item.label | translate }}">
