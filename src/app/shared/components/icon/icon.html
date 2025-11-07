@@ -1,1 +1,11 @@
-<img [alt]="imgAlt()" [height]="imgHeight()" [loading]="'lazy'" [ngSrc]="imgSrc()" [width]="imgWidth()" role="img" />
+<img
+			[attr.alt]="imgAlt()"
+			[attr.aria-hidden]="(imgAlt() === '' || imgAlt() == null) ? 'true' : null"
+			[height]="imgHeight()"
+			[loading]="'lazy'"
+			[ngSrc]="imgSrc()"
+			[width]="imgWidth()"
+			decoding="async"
+			fetchpriority="low"
+/>
+
