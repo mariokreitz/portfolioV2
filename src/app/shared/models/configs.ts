@@ -1,8 +1,8 @@
 export interface FeaturedProjectsConfig {
     titleKey: string;
     descriptionKey: string;
-    enableAutoScroll: boolean;
+    enableAutoplay: boolean;
     showControls: boolean;
+    showProgressbar: boolean;
     delayBetweenSlides: number;
-    showSlidebar: boolean;
 }
