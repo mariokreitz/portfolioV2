@@ -1,14 +1,19 @@
 {
   "app": {
     "page": {
-      "home": {
-        "featured-projects": "Empfohlene Projekte",
-        "profile-description": "Ich entwickle Barrierefreie, performante und skalierbare Webanwendungen mit Fokus auf Angular für CodeQuarter in Deutschland."
-      },
       "projects": {
         "no-projects": "Keine Projekte verfügbar.",
         "title": "Projekte"
       }
+    },
+    "features": {
+      "featured-projects": {
+        "title": "Vorgestellte Projekte",
+        "description": "Ein paar highlights meiner Arbeit."
+      }
+    },
+    "links": {
+      "learn-more": "Mehr erfahren"
     },
     "under-construction": "Diese Seite befindet sich im Aufbau."
   },

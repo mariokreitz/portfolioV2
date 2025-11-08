@@ -1,11 +1,7 @@
-<section>
-
-	@if (showControls()) {
-		<app-slider-controls />
-	}
-
-	@if (enableAutoScroll()) {
-		<app-slider-progressbar />
-	}
-</section>
+<app-slider-images [autoPlay]="enableAutoplay()"
+									 [showControls]="showControls()"
+									 [showProgressBar]="showProgressbar()"
+									 [slideDelay]="delayBetweenSlides()"
+									 [slides]="projects()">
+</app-slider-images>
 
