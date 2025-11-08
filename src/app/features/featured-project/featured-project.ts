@@ -1,18 +1,12 @@
-import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, input, type InputSignal, type Signal } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import { SliderImages } from '../../shared/components/slider/slider-images/slider-images';
 import type { FeaturedProjectsConfig } from '../../shared/models/configs';
 import type { ProjectItem } from '../../shared/models/project-item';
-import { SliderControls } from './components/slider-controls/slider-controls';
-import { SliderProgressbar } from './components/slider-progressbar/slider-progressbar';
 
 @Component({
     selector: 'app-featured-project',
     imports: [
-        TranslatePipe,
-        NgOptimizedImage,
-        SliderControls,
-        SliderProgressbar,
+        SliderImages,
     ],
     templateUrl: './featured-project.html',
     styleUrls: [ './featured-project.css' ],
@@ -30,6 +24,8 @@ export class FeaturedProject {
     });
 
     public readonly showControls: Signal<boolean> = computed(() => this.effectiveConfig().showControls);
-    public readonly enableAutoScroll: Signal<boolean> = computed(() => this.effectiveConfig().enableAutoScroll);
+    public readonly showProgressbar: Signal<boolean> = computed(() => this.effectiveConfig().showProgressbar);
+    public readonly enableAutoplay: Signal<boolean> = computed(() => this.effectiveConfig().enableAutoplay);
+    public readonly delayBetweenSlides: Signal<number> = computed(() => this.effectiveConfig().delayBetweenSlides);
 
 }
