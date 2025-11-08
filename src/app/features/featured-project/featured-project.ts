@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, input, type InputSignal, type Signal } from '@angular/core';
+import { SliderControls } from '../../shared/components/slider/slider-controls/slider-controls';
 import { SliderImages } from '../../shared/components/slider/slider-images/slider-images';
+import { SliderProgressbar } from '../../shared/components/slider/slider-progressbar/slider-progressbar';
 import type { FeaturedProjectsConfig } from '../../shared/models/configs';
 import type { ProjectItem } from '../../shared/models/project-item';
 
@@ -7,6 +9,8 @@ import type { ProjectItem } from '../../shared/models/project-item';
     selector: 'app-featured-project',
     imports: [
         SliderImages,
+        SliderControls,
+        SliderProgressbar,
     ],
     templateUrl: './featured-project.html',
     styleUrls: [ './featured-project.css' ],
