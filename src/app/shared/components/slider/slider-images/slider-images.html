@@ -1,1 +1,10 @@
-<p>slider-images works!</p>
+<section class="relative">
+	<div class="flex overflow-x-hidden max-w-md h-auto snap-x snap-mandatory scroll-smooth scrollbar-hide">
+		@for (project of slides(); track project.id) {
+			<img alt="{{project.name}}" class="object-cover object-left" src="{{project.imgSrc}}">
+		}
+	</div>
+	<ng-content select="app-slider-controls" />
+	<ng-content select="app-slider-progressbar" />
+
+</section>
