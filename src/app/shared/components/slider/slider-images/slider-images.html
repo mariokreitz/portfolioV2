@@ -1,4 +1,4 @@
-<section class="relative flex max-w-md overflow-x-hidden w-full space-x-4 py-4">
+<section class="relative  flex max-w-md overflow-x-hidden w-full space-x-4 my-8">
 	@for (project of slides(); track project.id) {
 		<figure class="flex-none w-full  bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
 			<div class="relative w-full h-48 bg-gray-100">
@@ -15,14 +15,14 @@
 			</figcaption>
 		</figure>
 	}
-	@if (showControls()) {
-		<app-slider-controls />
-	} @else {
-		<ng-content select="app-slider-controls" />
-	}
 	@if (showProgressBar()) {
 		<app-slider-progressbar />
 	} @else {
 		<ng-content select="app-slider-progressbar" />
 	}
 </section>
+@if (showControls()) {
+	<app-slider-controls />
+} @else {
+	<ng-content select="app-slider-controls" />
+}
