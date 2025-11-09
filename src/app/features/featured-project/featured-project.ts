@@ -10,6 +10,7 @@ import type { ProjectItem } from '../../shared/models/project-item';
     ],
     templateUrl: './featured-project.html',
     styleUrls: [ './featured-project.css' ],
+    host: { class: 'block' },
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeaturedProject {
