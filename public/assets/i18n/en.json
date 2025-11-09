@@ -1,1 +1,59 @@
-{}
+{
+  "app": {
+    "features": {
+      "featured-projects": {
+        "description": "For more…",
+        "title": "Project highlights"
+      }
+    },
+    "links": {
+      "learn-more": "Learn more"
+    },
+    "page": {
+      "projects": {
+        "no-projects": "No projects available",
+        "title": "Projects"
+      }
+    },
+    "shared": {
+      "slider": {
+        "controls": {
+          "go-to": "Go to slide {{name}}"
+        }
+      }
+    },
+    "sidebar": {
+      "badges": {
+        "title": "Badges"
+      },
+      "title": "Sidebar",
+      "tryhackme": {
+        "wcag": {
+          "title": "TryHackMe public profile for Mario Kreitz"
+        }
+      }
+    },
+    "under-construction": "Page is under construction"
+  },
+  "language-selector": {
+    "button": "Change language",
+    "menuLabel": "Select language",
+    "options": {
+      "de": "German",
+      "en": "English"
+    }
+  },
+  "nav": {
+    "home": "Homepage",
+    "projects": "Projects"
+  },
+  "navigation": {
+    "home": "Homepage",
+    "projects": "Projects",
+    "social": "Socials",
+    "wcag": {
+      "links": "Navigationlinks",
+      "nav": "Main menu"
+    }
+  }
+}

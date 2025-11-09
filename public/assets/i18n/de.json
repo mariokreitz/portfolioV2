@@ -1,35 +1,35 @@
 {
   "app": {
+    "features": {
+      "featured-projects": {
+        "description": "Hier geht es weiter...",
+        "title": "Projekt-Highlights"
+      }
+    },
+    "links": {
+      "learn-more": "Mehr erfahren"
+    },
     "page": {
       "projects": {
         "no-projects": "Keine Projekte verfügbar.",
         "title": "Projekte"
       }
     },
-    "features": {
-      "featured-projects": {
-        "title": "Projekt-Highlights",
-        "description": "Hier geht es weiter..."
-      }
-    },
-    "links": {
-      "learn-more": "Mehr erfahren"
-    },
-    "sidebar": {
-      "title": "Seitenleiste",
-      "badges": {
-        "title": "Abzeichen"
-      },
-      "tryhackme": {
-        "wcag": {
-          "title": "TryHackMe öffentliches Profilabzeichen für Mario Kreitz"
-        }
-      }
-    },
     "shared": {
       "slider": {
         "controls": {
           "go-to": "Gehe zu Folie {{name}}"
+        }
+      }
+    },
+    "sidebar": {
+      "badges": {
+        "title": "Abzeichen"
+      },
+      "title": "Seitenleiste",
+      "tryhackme": {
+        "wcag": {
+          "title": "TryHackMe öffentliches Profilabzeichen für Mario Kreitz"
         }
       }
     },
