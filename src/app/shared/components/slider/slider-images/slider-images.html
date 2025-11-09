@@ -1,10 +1,28 @@
-<section class="relative">
-	<div class="flex overflow-x-hidden max-w-md h-auto snap-x snap-mandatory scroll-smooth scrollbar-hide">
-		@for (project of slides(); track project.id) {
-			<img alt="{{project.name}}" class="object-cover object-left" src="{{project.imgSrc}}">
-		}
-	</div>
-	<ng-content select="app-slider-controls" />
-	<ng-content select="app-slider-progressbar" />
-
+<section class="relative flex max-w-md overflow-x-hidden w-full space-x-4 py-4">
+	@for (project of slides(); track project.id) {
+		<figure class="flex-none w-full  bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+			<div class="relative w-full h-48 bg-gray-100">
+				<img [alt]="project.name"
+						 [ngSrc]="project.imgSrc"
+						 class="absolute inset-0 w-full h-full object-cover object-left"
+						 height="300"
+						 loading="lazy"
+						 width="448" />
+			</div>
+			<figcaption class="p-3">
+				<p class="text-sm font-medium text-gray-900 truncate">{{ project.name }}</p>
+				<p class="mt-1 text-xs text-gray-600 truncate">{{ project.description }}</p>
+			</figcaption>
+		</figure>
+	}
+	@if (showControls()) {
+		<app-slider-controls />
+	} @else {
+		<ng-content select="app-slider-controls" />
+	}
+	@if (showProgressBar()) {
+		<app-slider-progressbar />
+	} @else {
+		<ng-content select="app-slider-progressbar" />
+	}
 </section>
