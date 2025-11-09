@@ -8,12 +8,23 @@
     },
     "features": {
       "featured-projects": {
-        "title": "Vorgestellte Projekte",
-        "description": "Ein paar highlights meiner Arbeit."
+        "title": "Projekt-Highlights",
+        "description": "Hier geht es weiter..."
       }
     },
     "links": {
       "learn-more": "Mehr erfahren"
+    },
+    "sidebar": {
+      "title": "Seitenleiste",
+      "badges": {
+        "title": "Abzeichen"
+      },
+      "tryhackme": {
+        "wcag": {
+          "title": "TryHackMe öffentliches Profilabzeichen für Mario Kreitz"
+        }
+      }
     },
     "shared": {
       "slider": {
