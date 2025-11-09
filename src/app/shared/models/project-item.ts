@@ -8,7 +8,7 @@ export type ProjectItem = {
     name: string;
     description: string;
     url?: Url | Route;
-    imgSrc?: string;
+    imgSrc: string;
     tags?: string[]
     status: 'released' | 'in-progress' | 'on-hold';
     isFeatured?: boolean;
