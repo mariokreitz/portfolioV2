@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-:root {
-    color-scheme: dark light;
-}
-
-.dark {
-    color-scheme: dark;
-}
-
 body {
     @apply flex flex-col h-full bg-white dark:bg-slate-900 dark:text-slate-100;
 }
