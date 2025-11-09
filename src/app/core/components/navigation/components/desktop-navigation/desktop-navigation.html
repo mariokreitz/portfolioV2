@@ -6,7 +6,7 @@
 		@for (item of navigationLinks(); track item.label) {
 			<li aria-label="{{ item.label | translate }}">
 				<a (click)="navigateTo(item.link)"
-					 [class.active]="currentRoute() === item.link ? 'aria-current' : null"
+					 [attr.aria-current]="currentRoute() === item.link ? 'page' : null"
 					 class="w-full text-left inline-flex items-center gap-2 text-base transition-colors font-medium text-white hover:bg-slate-200/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded py-2 px-2">
 					<fa-icon [icon]="item.icon"></fa-icon>
 					<span>{{ item.label | translate }}</span>
