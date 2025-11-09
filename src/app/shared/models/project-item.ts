@@ -3,7 +3,7 @@ import type { Route, Url } from '../../core/models/navigation-item';
 
 export type uuidType = ReturnType<typeof uuid>;
 
-export type ProjectItem = {
+export interface ProjectItem {
     id: uuidType;
     name: string;
     description: string;
@@ -12,4 +12,4 @@ export type ProjectItem = {
     tags?: string[]
     status: 'released' | 'in-progress' | 'on-hold';
     isFeatured?: boolean;
-};
+}
