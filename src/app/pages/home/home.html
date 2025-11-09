@@ -1,15 +1,33 @@
 <app-layout>
-	<div class="content gap-12">
-		<section class="max-w-7xl mx-auto w-full">
-			<app-section-headline [title]="featuredProjectsConfig.titleKey">
+	<main aria-labelledby="home-title" class="content gap-12">
+		<h1 class="sr-only" id="home-title">Home</h1>
+		<code class="text-green-500 bg-slate-800 w-fit p-2 rounded-md">
+			TODO: Create home page
+		</code>
+		<p>Have a cupcake 🧁</p>
+	</main>
+	<aside aria-labelledby="sidebar-title" class="hidden lg:flex flex-col gap-12 max-w-xs w-full">
+		<h2 class="sr-only" id="sidebar-title">{{ "app.sidebar.title"|translate }}</h2>
+		<section aria-labelledby="badges-title" class="block">
+			<app-section-headline [title]="'app.sidebar.badges.title' | translate" id="badges-title" />
+			<iframe [title]="'app.sidebar.tryhackme.wcag.title'|translate"
+							allowtransparency="true"
+							height="88" loading="lazy"
+							src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=6136920"
+							style="color-scheme: auto"
+							width="329"></iframe>
+		</section>
+		<section aria-labelledby="featured-projects-headline" class="block">
+			<app-section-headline [title]="featuredProjectsConfig.titleKey" id="featured-projects-headline">
 				<p class="mt-2 text-sm text-slate-300">
 					{{ featuredProjectsConfig.descriptionKey | translate }}
+					<a (click)="navigateTo('/projects')" class="text-indigo-600">{{ "app.links.learn-more"| translate }}</a>
 				</p>
-			</app-section-headline>
 
+			</app-section-headline>
 			@if (projects().length > 0) {
 				<app-featured-project [config]="featuredProjectsConfig" [projects]="projects()" />
 			}
 		</section>
-	</div>
+	</aside>
 </app-layout>
