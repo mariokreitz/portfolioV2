@@ -1,0 +1,18 @@
+/* Skip link styles for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1f2937; /* slate-800 */
+    color: #fff;
+    padding: 8px 12px;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 8px;
+    left: 8px;
+    outline: 2px solid #6366f1; /* indigo-500 */
+}
+
