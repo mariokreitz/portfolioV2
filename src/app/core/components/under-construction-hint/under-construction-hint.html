@@ -1,1 +1,11 @@
-<p class="fixed bottom-0 left-0 right-0 text-center bg-red-400">{{ "app.under-construction" | translate }}</p>
+<div class="fixed inset-x-0 bottom-0 z-50 flex justify-center pointer-events-none">
+	<div class="w-full max-w-sm pointer-events-auto rounded-t-2xl bg-red-600 text-white shadow-lg border border-red-700">
+		<div aria-live="polite"
+				 class="flex items-center justify-center py-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white"
+				 role="status"
+				 tabindex="0">
+			<p class="truncate">{{ "app.under-construction" | translate }}</p>
+		</div>
+	</div>
+</div>
+
