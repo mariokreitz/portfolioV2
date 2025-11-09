@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, linkedSignal } from '@angular/core';
 
 @Component({
     selector: 'app-slider-progressbar',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
     styleUrl: './slider-progressbar.css',
 })
 export class SliderProgressbar {
-
+    protected readonly progressPercentage = linkedSignal(() => {
+        // Placeholder logic for progress percentage
+        return 50; // This should be replaced with actual calculation
+    });
 }
