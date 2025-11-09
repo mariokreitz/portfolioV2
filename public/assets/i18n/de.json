@@ -15,6 +15,13 @@
     "links": {
       "learn-more": "Mehr erfahren"
     },
+    "shared": {
+      "slider": {
+        "controls": {
+          "go-to": "Gehe zu Folie {{name}}"
+        }
+      }
+    },
     "under-construction": "Diese Seite befindet sich im Aufbau."
   },
   "language-selector": {
