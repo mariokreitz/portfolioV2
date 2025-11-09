@@ -13,7 +13,7 @@ import { SliderProgressbar } from '../slider-progressbar/slider-progressbar';
     ],
     templateUrl: './slider-images.html',
     styleUrl: './slider-images.css',
-    host: { class: 'inline-flex flex-col' },
+    host: { class: 'inline-block max-w-fit w-full' },
 })
 export class SliderImages {
     public readonly autoPlay: InputSignal<boolean> = input.required<boolean>();
