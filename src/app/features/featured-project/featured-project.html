@@ -1,13 +1,7 @@
 <app-slider-images [autoPlay]="enableAutoplay()"
-									 [showControls]="showControls()"
-									 [showProgressBar]="showProgressbar()"
+									 [showControls]="false"
+									 [showProgressBar]="false"
 									 [slideDelay]="delayBetweenSlides()"
 									 [slides]="projects()">
-	@if (showControls()) {
-		<app-slider-controls />
-	}
-	@if (showProgressbar()) {
-		<app-slider-progressbar />
-	}
 </app-slider-images>
 
