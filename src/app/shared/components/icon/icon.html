@@ -1,6 +1,6 @@
 <img
 			[attr.alt]="imgAlt()"
-			[attr.aria-hidden]="(imgAlt() === '' || imgAlt() == null) ? 'true' : null"
+			[attr.aria-hidden]="(imgAlt() === '' || imgAlt() === null) ? 'true' : null"
 			[height]="imgHeight()"
 			[loading]="'lazy'"
 			[ngSrc]="imgSrc()"
