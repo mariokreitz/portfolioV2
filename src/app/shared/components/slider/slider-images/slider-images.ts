@@ -79,8 +79,8 @@ export class SliderImages implements OnInit, OnChanges, OnDestroy {
             return;
         }
         const delay: number = this.slideDelay();
-        const tickMs: number = 50; // granularity
-        let elapsed: number = 0;
+        const tickMs = 50; // granularity
+        let elapsed = 0;
         this.progressInterval = setInterval(() => {
             elapsed += tickMs;
             const pct: number = Math.min(100, (elapsed / delay) * 100);
