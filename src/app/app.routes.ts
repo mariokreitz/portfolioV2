@@ -1,12 +1,9 @@
 import type { Routes } from '@angular/router';
 
 const childRoutes: Routes = [
-    {
-        path: '', loadComponent: () => import('./pages/home/home').then((m) => m.Home),
-    },
-    {
-        path: 'projects', loadComponent: () => import('./pages/projects/projects').then((m) => m.Projects),
-    },
+    { path: '', loadComponent: () => import('./pages/home/home').then((m) => m.Home) },
+    { path: 'projects', loadComponent: () => import('./pages/projects/projects').then((m) => m.Projects) },
+    { path: 'imprint', loadComponent: () => import('./pages/imprint/imprint').then((m) => m.Imprint) },
 ];
 
 export const routes: Routes = [
