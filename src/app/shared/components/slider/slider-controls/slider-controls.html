@@ -1,13 +1,12 @@
 <ng-content>
-	<div aria-label="Slider bullets" class="flex items-center justify-center space-x-2" role="group">
-		@for (bullet of slides(); track bullet.id) {
+	<div aria-label="Slider bullets" class="flex items-center justify-center space-x-3" role="group">
+		@for (bullet of slides(); track idx; let idx = $index) {
 			<button
 						(click)="goToSlide($index)"
-						[attr.aria-current]="bullet.isActive ? 'true' : null"
-						[attr.aria-label]="'Go to slide ' + ($index + 1)"
-						[class]="('inline-flex items-center justify-center w-3 h-3 rounded-full border shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 transition-transform duration-200 ' + (bullet.isActive ? 'bg-indigo-600 border-indigo-600 scale-110' : 'bg-white/80 border-gray-300'))"
-						type="button"
-			></button>
+						[attr.aria-current]="idx === currentIndex() ? 'true' : null"
+						[attr.aria-label]="'app.shared.slider.controls.go-to' | translate : { name: bullet.name }"
+						[class]="('inline-flex items-center justify-center w-4 h-4 rounded-full border shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 transition-transform duration-200 ' + (idx === currentIndex() ? 'bg-indigo-600 border-indigo-600 scale-110' : 'bg-white/80 border-gray-300'))"
+						type="button"></button>
 		}
 	</div>
 </ng-content>

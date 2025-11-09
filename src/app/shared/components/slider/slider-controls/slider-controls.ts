@@ -1,18 +1,26 @@
-import { ChangeDetectionStrategy, Component, computed, input, type InputSignal, type Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, type InputSignal, model, type ModelSignal } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-slider-controls',
-    imports: [],
+    imports: [
+        TranslatePipe,
+    ],
     templateUrl: './slider-controls.html',
     styleUrl: './slider-controls.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SliderControls<T extends any[] = any[]> {
     public readonly slides: InputSignal<T> = input.required<T>();
-    public readonly slidesLength: Signal<number> = computed(() => this.slides().length);
+    public readonly currentIndex: ModelSignal<number> = model.required<number>();
 
     public goToSlide(index: number): void {
-        // Implementation for navigating to a specific slide
-        console.log(index);
+        const length: number = this.slides().length;
+        if (length === 0) return;
+
+        const bounded: number = Math.max(0, Math.min(index, length - 1));
+        if (this.currentIndex() !== bounded) {
+            this.currentIndex.set(bounded);
+        }
     }
 }
