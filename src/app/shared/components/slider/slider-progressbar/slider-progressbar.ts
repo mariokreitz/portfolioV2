@@ -9,6 +9,6 @@ import { Component, linkedSignal } from '@angular/core';
 export class SliderProgressbar {
     protected readonly progressPercentage = linkedSignal(() => {
         // Placeholder logic for progress percentage
-        return 50; // This should be replaced with actual calculation
+        return 70; // This should be replaced with actual calculation
     });
 }
