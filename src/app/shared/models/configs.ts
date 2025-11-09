@@ -5,4 +5,5 @@ export interface FeaturedProjectsConfig {
     showControls: boolean;
     showProgressbar: boolean;
     delayBetweenSlides: number;
+    slideSpeed: number;
 }
