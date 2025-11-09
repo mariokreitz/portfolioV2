@@ -1,10 +1,12 @@
-<section class="relative  flex max-w-md overflow-x-hidden w-full space-x-4 mt-8 mb-4">
+<section class="relative  flex max-w-md overflow-x-hidden w-full space-x-4 py-4">
 	@for (project of slides(); track project.id) {
-		<figure class="flex-none w-full  bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
+		<figure
+					[style]="{transform: 'translateX(-' + currentIndex() * 100 + '%)'}"
+					class="flex-none transition-transform block m-0 w-full bg-white rounded-lg overflow-hidden shadow-md border border-gray-100">
 			<div class="relative w-full h-48 bg-gray-100">
 				<img [alt]="project.name"
 						 [ngSrc]="project.imgSrc"
-						 class="absolute pointer-events-none inset-0 w-full h-full object-cover object-left"
+						 class="absolute inset-0 w-full h-full object-cover object-left"
 						 height="300"
 						 loading="lazy"
 						 width="448" />
@@ -22,7 +24,7 @@
 	}
 </section>
 @if (showControls()) {
-	<app-slider-controls [slides]="slides()" />
+	<app-slider-controls [(currentIndex)]="currentIndex" [slides]="slides()" />
 } @else {
 	<ng-content select="app-slider-controls" />
 }
