@@ -7,6 +7,7 @@ import type { ProjectItem } from '../../shared/models/project-item';
     selector: 'app-featured-project',
     imports: [
         SliderImages,
+
     ],
     templateUrl: './featured-project.html',
     styleUrls: [ './featured-project.css' ],
@@ -27,5 +28,6 @@ export class FeaturedProject {
     public readonly showProgressbar: Signal<boolean> = computed(() => this.effectiveConfig().showProgressbar);
     public readonly enableAutoplay: Signal<boolean> = computed(() => this.effectiveConfig().enableAutoplay);
     public readonly delayBetweenSlides: Signal<number> = computed(() => this.effectiveConfig().delayBetweenSlides);
+    public readonly slideTransitionSpeed: Signal<number> = computed(() => this.effectiveConfig().slideSpeed);
 
 }

@@ -6,5 +6,6 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
     enableAutoplay: true,
     showControls: true,
     showProgressbar: true,
-    delayBetweenSlides: 5000,
+    delayBetweenSlides: 10_000,
+    slideSpeed: 1300,
 };
