@@ -32,15 +32,4 @@ export const projects: ProjectItem[] = [
         status: 'in-progress',
         isFeatured: true,
     },
-    {
-        id: uuid(),
-        name: 'test',
-        description: 'test',
-        imgSrc: 'assets/images/placeholder-project.svg',
-        tags: [
-            'test',
-        ],
-        status: 'on-hold',
-        isFeatured: true,
-    },
 ];
