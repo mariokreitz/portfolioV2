@@ -1,4 +1,9 @@
 {
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About Me"
+  },
   "hero": {
     "title": "Transforming Ideas into Reality",
     "subtitle": "Innovative solutions for modern problems",
