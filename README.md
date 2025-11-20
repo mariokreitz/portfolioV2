@@ -2,6 +2,24 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
 
+## Installation
+
+To install dependencies, run:
+
+```bash
+npm install
+```
+
+Or for a clean install (recommended for CI/CD):
+
+```bash
+npm ci
+```
+
+> **Note:** This project uses `legacy-peer-deps=true` in `.npmrc` to resolve a peer dependency conflict between
+`@fortawesome/angular-fontawesome@3.0.0` (requires Angular 20.x) and Angular 21.x. This is safe and allows FontAwesome
+> to work correctly with Angular 21.
+
 ## Development server
 
 To start a local development server, run:
