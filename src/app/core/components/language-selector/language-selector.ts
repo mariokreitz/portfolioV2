@@ -19,9 +19,7 @@ import { LangNavigatorService } from '../../services/lang-navigator';
     templateUrl: './language-selector.html',
     styleUrl: './language-selector.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    host: {
-        '[class.lang-open]': 'isLanguageSelectionOpen()',
-    },
+    host: { '[class.lang-open]': 'isLanguageSelectionOpen()' },
 })
 export class LanguageSelector implements OnInit, OnDestroy {
     protected readonly languageIcon: IconDefinition = faLanguage;
@@ -34,7 +32,7 @@ export class LanguageSelector implements OnInit, OnDestroy {
     private readonly translate: TranslateService = inject(TranslateService);
     private readonly elementRef: ElementRef<HTMLElement> = inject(ElementRef);
 
-    private readonly _currentLanguage: WritableSignal<string> = signal(this.translate.currentLang);
+    private readonly _currentLanguage: WritableSignal<string> = signal(this.translate.getCurrentLang());
     public readonly currentLanguage: Signal<string> = this._currentLanguage.asReadonly();
 
     private outsideClickListener?: (e: MouseEvent) => void;
@@ -42,7 +40,7 @@ export class LanguageSelector implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         this.langChangeSub = this.translate.onLangChange.subscribe(() => {
-            this._currentLanguage.set(this.translate.currentLang);
+            this._currentLanguage.set(this.translate.getCurrentLang());
         });
 
         this.outsideClickListener = (e: MouseEvent): void => {

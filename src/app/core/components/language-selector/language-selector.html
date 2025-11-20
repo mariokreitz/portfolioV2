@@ -1,33 +1,21 @@
 <div class="relative inline-block text-left">
-	<button
-				(click)="toggleLanguageSelectionMenu()"
-				(keydown)="onToggleButtonKeydown($event)"
-				[attr.aria-expanded]="isLanguageSelectionOpen()"
-				aria-haspopup="menu"
-				class="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-gradient-to-r from-slate-900 via-purple-700 to-indigo-600 text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-				id="toggle-btn"
-				type="button"
-	>
+	<button (click)="toggleLanguageSelectionMenu()"
+					(keydown)="onToggleButtonKeydown($event)"
+					id="toggle-btn"
+					type="button">
 		<fa-icon [icon]="languageIcon" />
-		<span class="sr-only">{{ 'language-selector.button' | translate }}</span>
-		<span aria-hidden="true">{{ currentLanguage() | uppercase }}</span>
+		<span>{{ currentLanguage() | uppercase }}</span>
 	</button>
 
 	@if (isLanguageSelectionOpen()) {
-		<div aria-label="{{ 'language-selector.menuLabel' | translate }}"
-				 class="absolute right-0 bottom-12 sm:bottom-auto sm:mt-2 w-40 rounded-md overflow-hidden bg-slate-900 shadow-2xl ring-1 ring-black ring-opacity-40 focus:outline-none z-50"
-				 role="menu">
+		<div class="absolute right-0 bg-bg-secondary" role="menu">
 			@for (lang of languages; track lang) {
-				<a
-							(click)="selectLanguage(lang)"
-							(keydown)="onMenuItemKeydown($event, lang)"
-							[attr.aria-current]="lang === currentLanguage() ? 'true' : null"
-							class="block px-4 py-2 text-sm text-white hover:bg-slate-700 focus:bg-slate-700"
-							id="lang-option-{{ lang }}"
-							role="menuitem"
-							tabindex="0"
-				>
-					{{ ('language-selector.options.' + lang) | translate }}
+				<a (click)="selectLanguage(lang)"
+					 (keydown)="onMenuItemKeydown($event, lang)"
+					 class="p-4 w-full inline-block hover:bg-bg-tertiary"
+					 id="lang-option-{{ lang }}"
+					 role="menuitem">
+					{{ ('languageSelector.options.' + lang) | translate }}
 				</a>
 			}
 		</div>
