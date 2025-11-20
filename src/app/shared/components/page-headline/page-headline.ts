@@ -12,10 +12,10 @@ import { cn } from '../../utils';
 })
 export class PageHeadline {
     public readonly titleKey: InputSignal<string> = input.required<string>();
-    public readonly class: InputSignal<string | undefined> = input<string>();
+    public readonly className: InputSignal<string | undefined> = input<string>();
 
     protected readonly headlineClasses = computed(() =>
-      cn('text-3xl md:text-4xl', this.class()),
+      cn('text-3xl md:text-4xl', this.className()),
     );
 }
 
