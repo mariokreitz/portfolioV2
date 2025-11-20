@@ -1,13 +1,11 @@
-<nav [class]="desktopContainerMerged()" aria-label="{{ 'navigation.wcag.nav' | translate }}">
-	<a [class]="logoAnchorMerged()" [href]="'/'">
+<nav class="flex justify-between items-center py-4">
+	<a [href]="'/'">
 		<app-icon [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
 	</a>
-	<ul aria-label="{{ 'navigation.wcag.links' | translate }}" class="flex items-center gap-6">
+	<ul class="flex items-center gap-6">
 		@for (item of navigationLinks(); track item.label) {
-			<li aria-label="{{ item.label | translate }}">
-				<a (click)="navigateTo(item.link)"
-					 [attr.aria-current]="currentRoute() === item.link ? 'page' : null"
-					 [class]="currentRoute() === item.link ? cn(navLinkBaseMerged(), navLinkActiveMerged()) : navLinkBaseMerged()">
+			<li>
+				<a (click)="navigateTo(item.link)">
 					@if (item.icon) {
 						<fa-icon [icon]="item.icon"></fa-icon>
 					}
@@ -16,24 +14,5 @@
 			</li>
 		}
 	</ul>
-	<div [class]="languageSelectorWrapperDesktopMerged()">
-		<app-language-selector></app-language-selector>
-		@if (socialLinks()) {
-			<ul aria-label="{{ 'navigation.social' | translate }}" class="flex items-center gap-3">
-				@for (item of socialLinks(); track item.label) {
-					<li>
-						<a [attr.aria-label]="'Open ' + (item.label | translate) + ' (opens in a new tab)'"
-							 [class]="socialLinkItemMerged()"
-							 [href]="item.link"
-							 rel="noopener noreferrer"
-							 target="_blank"
-						>
-							<fa-icon [icon]="item.icon" aria-hidden="true" class="text-2xl"></fa-icon>
-							<span class="sr-only">{{ item.label | translate }}, opens in a new tab</span>
-						</a>
-					</li>
-				}
-			</ul>
-		}
-	</div>
+	<app-language-selector></app-language-selector>
 </nav>
