@@ -1,13 +1,13 @@
-<nav class="px-4 py-4 flex items-center justify-between border-b border-slate-700">
-	<a [href]="'/'" class="inline-flex items-center focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
+<nav [class]="mobileTopBarMerged()">
+	<a [class]="logoAnchorMerged()" [href]="'/'">
 		<app-icon [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
 	</a>
 	<button
 				(click)="toggleMenu()"
 				[attr.aria-expanded]="ariaExpanded()"
+				[class]="mobileToggleButtonMerged()"
 				aria-controls="mobile-menu"
-				aria-label="Toggle navigation menu"
-				class="rounded p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-200">
+				aria-label="Toggle navigation menu">
 		@if (menuOpen()) {
 			<fa-icon [icon]="faXmark" class="text-lg"></fa-icon>
 		} @else {
@@ -17,13 +17,13 @@
 </nav>
 
 @if (menuOpen()) {
-	<div class="bg-slate-900 text-end shadow-md p-4 border-b border-slate-700" id="mobile-menu">
+	<div [class]="mobileMenuPanelMerged()" id="mobile-menu">
 		<ul class="flex flex-col gap-3">
 			@for (item of navigationLinks(); track item.label) {
 				<li>
 					<a (click)="navigateTo(item.link)"
-						 [class.active]="currentRoute() === item.link ? 'aria-current' : null"
-						 class="w-full text-left inline-flex items-center transition-colors gap-2 text-base font-medium text-white hover:bg-slate-200/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded py-2 px-2">
+						 [attr.aria-current]="currentRoute() === item.link ? 'page' : null"
+						 [class]="currentRoute() === item.link ? cn(navLinkBaseMerged(), navLinkActiveMerged()) : navLinkBaseMerged()">
 						@if (item.icon) {
 							<fa-icon [icon]="item.icon"></fa-icon>
 						}
@@ -32,7 +32,7 @@
 				</li>
 			}
 		</ul>
-		<div class="mt-4">
+		<div [class]="languageSelectorWrapperMobileMerged()">
 			<app-language-selector></app-language-selector>
 		</div>
 	</div>

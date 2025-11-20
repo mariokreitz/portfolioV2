@@ -1,4 +1,7 @@
-<!-- Desktop navigation	-->
-<app-desktop-navigation [navigationLinks]="navigationLinks" [socialLinks]="socialLinks" />
-<!--	Mobile navigation-->
-<app-mobile-navigation [navigationLinks]="navigationLinks" />
+<div [class]="rootWrapperClass()">
+	<!-- Desktop navigation	-->
+	<app-desktop-navigation [classes]="classes()" [navigationLinks]="navigationLinks" [socialLinks]="socialLinks" />
+	<!--	Mobile navigation-->
+	<app-mobile-navigation [classes]="classes()" [navigationLinks]="navigationLinks" />
+</div>
+
