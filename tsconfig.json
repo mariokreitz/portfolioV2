@@ -4,6 +4,7 @@
   "extends": "@tsconfig/recommended/tsconfig.json",
   "compileOnSave": false,
   "compilerOptions": {
+    "esModuleInterop": true,
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -15,10 +16,6 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve",
-    "lib": [
-      "ES2022",
-      "DOM"
-    ],
     "moduleResolution": "bundler",
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
