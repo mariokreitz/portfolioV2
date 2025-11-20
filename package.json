@@ -47,7 +47,7 @@
     "@tsconfig/recommended": "^1.0.10",
     "@types/jasmine": "~5.1.0",
     "@types/uuid": "^10.0.0",
-    "angular-eslint": "20.4.0",
+    "angular-eslint": "20.6.0",
     "eslint": "^9.37.0",
     "i18n-excel-manager": "^2.1.1",
     "jasmine-core": "~5.9.0",
