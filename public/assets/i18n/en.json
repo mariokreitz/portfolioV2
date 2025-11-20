@@ -2,7 +2,16 @@
   "navigation": {
     "home": "Home",
     "projects": "Projects",
-    "about": "About Me"
+    "aboutMe": "About Me",
+    "cv": "CV"
+  },
+  "languageSelector": {
+    "options": {
+      "en": "English",
+      "es": "Spanish",
+      "fr": "French",
+      "de": "German"
+    }
   },
   "hero": {
     "title": "Transforming Ideas into Reality",
