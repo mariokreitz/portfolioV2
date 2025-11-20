@@ -14,6 +14,10 @@ export const navigationLinks: NavigationItem[] = [
         label: 'navigation.aboutMe',
         link: '/about',
     },
+    {
+        label: 'navigation.cv',
+        link: '/cv',
+    },
 ];
 
 export const socialLinks: NavigationItem[] = [
