@@ -11,6 +11,7 @@ type ButtonType = 'button' | 'submit' | 'reset';
     ],
     templateUrl: './button.html',
     styleUrl: './button.css',
+    host: { class: 'inline-block w-fit' },
 })
 export class Button {
     public readonly titleKey: InputSignal<string> = input.required<string>();
