@@ -1,0 +1,18 @@
+<app-layout>
+	<main aria-labelledby="nf-title" class="content w-full items-center justify-center gap-10 py-16 px-4 text-center">
+		<div class="relative flex flex-col items-center gap-8">
+			<div aria-hidden="true" class="absolute -inset-8 flex items-center justify-center z-0 pointer-events-none">
+				<div class="w-52 h-52 sm:w-64 sm:h-64 rounded-full bg-gradient-to-t from-indigo-400/20 to-cyan-400/30 blur-3xl pointer-events-none"></div>
+			</div>
+			<app-page-headline className="text-5xl sm:text-6xl font-bold tracking-tight" id="nf-title" titleKey="error404.title" />
+			<app-page-subheadline className="text-lg text-text-secondary" titleKey="error404.subtitle" />
+			<app-image className="relative z-10 w-full max-w-[300px] h-auto pointer-events-none"
+								 imgAlt="Security robot illustration for missing page"
+								 imgHeight="464"
+								 imgSrc="/assets/images/security_bot.png"
+								 imgWidth="459" />
+			<app-button (click)="goHome()" buttonType="button" titleKey="error404.cta" />
+		</div>
+	</main>
+</app-layout>
+

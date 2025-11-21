@@ -18,5 +18,10 @@
     "subtitle": "Frontend Developer & Cybersecurity Enthusiast",
     "thm": "Active on TryHackMe",
     "cta": "Contact Me"
+  },
+  "error404": {
+    "title": "404",
+    "subtitle": "The page you were looking for has disappeared into the void.",
+    "cta": "Go back home"
   }
 }
