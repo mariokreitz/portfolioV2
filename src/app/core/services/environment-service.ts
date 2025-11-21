@@ -6,6 +6,5 @@ import { environment } from '../../../environments/environment';
 })
 export class EnvironmentService {
     public readonly isProduction: Signal<boolean> = signal(environment.production);
-    public readonly isUnderConstruction: Signal<boolean> = signal(environment.underConstruction);
 
 }
