@@ -1,5 +1,5 @@
 <ng-content>
-	<div aria-label="Slider bullets" class="flex items-center justify-center space-x-3" role="group">
+	<div [attr.aria-label]="'accessibility.slider.bullets' | translate" class="flex items-center justify-center space-x-3" role="group">
 		@for (bullet of slides(); track idx; let idx = $index) {
 			<button
 						(click)="goToSlide($index)"

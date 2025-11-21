@@ -2,9 +2,9 @@
 	<button (click)="toggleLanguageSelectionMenu()"
 					(keydown)="onToggleButtonKeydown($event)"
 					[attr.aria-expanded]="isLanguageSelectionOpen()"
+					[attr.aria-label]="'accessibility.languageSelector.button' | translate"
 					[class]="isLanguageSelectionOpen() ? 'flex items-center gap-2 px-4 py-2 rounded-md bg-bg-tertiary text-text-primary font-medium border border-transparent transition-all duration-200 ring-2 ring-brand-primary focus-visible:outline-none' : 'flex items-center gap-2 px-4 py-2 rounded-md bg-bg-secondary text-text-primary hover:bg-bg-tertiary active:bg-bg-hover font-medium border border-transparent hover:border-bg-tertiary transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary'"
 					aria-haspopup="menu"
-					aria-label="Select language"
 					id="toggle-btn"
 					type="button">
 		<fa-icon [icon]="languageIcon" class="text-base" />
@@ -28,4 +28,3 @@
 		</div>
 	}
 </div>
-

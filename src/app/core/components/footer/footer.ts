@@ -18,4 +18,9 @@ import type { NavigationItem } from '../../models/navigation-item';
 export class Footer {
     protected readonly socialLinks: NavigationItem[] = socialLinks;
     protected readonly footerLinks: NavigationItem[] = footerLinks;
+
+    public getSocialMediaAriaLabel(label: string): string {
+        const key = label.toLowerCase();
+        return `accessibility.socialMedia.${key}`;
+    }
 }

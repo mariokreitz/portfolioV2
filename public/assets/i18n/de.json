@@ -1,1 +1,71 @@
-{}
+{
+  "app": {
+    "footNote": "© {{year}} Dein Name. Alle Rechte vorbehalten.",
+    "madeWith": "Mit ❤️ in Stuttgart, Deutschland gemacht.",
+    "page": {
+      "projects": {
+        "title": "Projekte",
+        "no-projects": "Keine Projekte verfügbar"
+      }
+    },
+    "shared": {
+      "slider": {
+        "controls": {
+          "go-to": "Zu {{name}} gehen"
+        }
+      }
+    }
+  },
+  "navigation": {
+    "home": "Startseite",
+    "projects": "Projekte",
+    "aboutMe": "Über mich",
+    "cv": "Lebenslauf",
+    "imprint": "Impressum",
+    "privacyPolicy": "Datenschutz"
+  },
+  "languageSelector": {
+    "options": {
+      "en": "Englisch",
+      "es": "Spanisch",
+      "fr": "Französisch",
+      "de": "Deutsch"
+    }
+  },
+  "hero": {
+    "title": "Ideen in Realität verwandeln",
+    "subtitle": "Frontend-Entwickler & Cybersecurity-Enthusiast",
+    "thm": "Aktiv auf TryHackMe",
+    "cta": "Kontaktiere mich"
+  },
+  "error404": {
+    "title": "404",
+    "subtitle": "Die Seite, nach der du suchst, ist ins Nichts verschwunden.",
+    "cta": "Zurück zur Startseite"
+  },
+  "accessibility": {
+    "skipToContent": "Zum Hauptinhalt springen",
+    "navigation": {
+      "logoLink": "Zur Startseite navigieren",
+      "toggleMenu": "Navigationsmenü umschalten",
+      "socialMediaLinks": "Social Media Links",
+      "footerNavigation": "Footer-Navigation"
+    },
+    "languageSelector": {
+      "button": "Sprache auswählen"
+    },
+    "project": {
+      "card": "Projekt: {{name}} - {{description}}"
+    },
+    "slider": {
+      "bullets": "Slider-Punkte"
+    },
+    "externalLink": "(öffnet in neuem Tab)",
+    "socialMedia": {
+      "linkedin": "LinkedIn-Profil besuchen",
+      "github": "GitHub-Profil besuchen",
+      "tryhackme": "TryHackMe-Profil besuchen"
+    }
+  }
+}
+

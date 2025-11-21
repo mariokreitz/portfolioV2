@@ -1,7 +1,20 @@
 {
   "app": {
     "footNote": "© {{year}} Your Name. All rights reserved.",
-    "madeWith": "Made with ❤️ in Suttgart, Germany."
+    "madeWith": "Made with ❤️ in Suttgart, Germany.",
+    "page": {
+      "projects": {
+        "title": "Projects",
+        "no-projects": "No projects available"
+      }
+    },
+    "shared": {
+      "slider": {
+        "controls": {
+          "go-to": "Go to {{name}}"
+        }
+      }
+    }
   },
   "navigation": {
     "home": "Home",
@@ -29,5 +42,29 @@
     "title": "404",
     "subtitle": "The page you were looking for has disappeared into the void.",
     "cta": "Go back home"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "navigation": {
+      "logoLink": "Navigate to homepage",
+      "toggleMenu": "Toggle navigation menu",
+      "socialMediaLinks": "Social media links",
+      "footerNavigation": "Footer navigation"
+    },
+    "languageSelector": {
+      "button": "Select language"
+    },
+    "project": {
+      "card": "Project: {{name}} - {{description}}"
+    },
+    "slider": {
+      "bullets": "Slider bullets"
+    },
+    "externalLink": "(opens in new tab)",
+    "socialMedia": {
+      "linkedin": "Visit LinkedIn profile",
+      "github": "Visit GitHub profile",
+      "tryhackme": "Visit TryHackMe profile"
+    }
   }
 }
