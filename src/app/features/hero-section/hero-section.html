@@ -1,1 +1,25 @@
-<app-page-headline [titleKey]="'hero.title'" className="text-5xl text-blue-600 font-extrabold" />
+<div class="flex flex-2 flex-col gap-8 max-w-3xl justify-center px-4 mx-auto">
+	<app-page-headline className="text-5xl sm:text-6xl lg:text-7xl text-balance leading-tight" titleKey="hero.title" />
+	<app-page-subheadline className="text-lg sm:text-xl lg:text-2xl" titleKey="hero.subtitle" />
+	<app-button buttonType="button" titleKey="hero.cta" />
+</div>
+
+
+<div class="relative flex flex-col gap-8 items-center justify-center w-full max-w-3xl mt-12 sm:mt-16 px-4 mx-auto">
+	<div aria-hidden="true"
+			 class="absolute inset-0 flex items-center justify-center z-0">
+		<div class="w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-t from-indigo-400/30 to-cyan-400/50 blur-3xl pointer-events-none"></div>
+	</div>
+	<app-image className="relative z-10 w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[459px] h-auto pointer-events-none"
+						 imgAlt="Security robot illustration"
+						 imgHeight="464"
+						 imgSrc="/assets/images/security_bot.png"
+						 imgWidth="459" />
+</div>
+
+<!-- Background Image Absolute -->
+<app-image className="absolute -z-10 top-0 left-0 h-auto max-w-none pointer-events-none"
+					 imgAlt="Background Dots"
+					 imgHeight="868"
+					 imgSrc="/assets/images/bg_dots.png"
+					 imgWidth="998" />
