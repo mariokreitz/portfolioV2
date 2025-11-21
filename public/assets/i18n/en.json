@@ -1,9 +1,15 @@
 {
+  "app": {
+    "footNote": "© {{year}} Your Name. All rights reserved.",
+    "madeWith": "Made with ❤️ in Suttgart, Germany."
+  },
   "navigation": {
     "home": "Home",
     "projects": "Projects",
     "aboutMe": "About Me",
-    "cv": "CV"
+    "cv": "CV",
+    "imprint": "Imprint",
+    "privacyPolicy": "Privacy Policy"
   },
   "languageSelector": {
     "options": {

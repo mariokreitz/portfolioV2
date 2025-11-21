@@ -39,3 +39,14 @@ export const socialLinks: NavigationItem[] = [
         icon: faCloud,
     },
 ];
+
+export const footerLinks: NavigationItem[] = [
+    {
+        label: 'navigation.imprint',
+        link: '/imprint',
+    },
+    {
+        label: 'navigation.privacyPolicy',
+        link: '/privacy-policy',
+    },
+];
