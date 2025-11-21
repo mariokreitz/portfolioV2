@@ -1,12 +1,13 @@
-<nav>
-	<a [href]="'/'">
-		<app-image [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
+<nav class="flex justify-between items-center py-4 px-4">
+	<a class="flex items-center" href="/">
+		<app-image [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" class="h-10 w-auto" />
 	</a>
 	<button
 				(click)="toggleMenu()"
 				[attr.aria-expanded]="ariaExpanded()"
 				aria-controls="mobile-menu"
-				aria-label="Toggle navigation menu">
+				aria-label="Toggle navigation menu"
+				class="p-2 rounded-md text-text-primary hover:bg-bg-secondary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary">
 		@if (menuOpen()) {
 			<fa-icon [icon]="faXmark" class="text-lg"></fa-icon>
 		} @else {
@@ -16,22 +17,27 @@
 </nav>
 
 @if (menuOpen()) {
-	<div id="mobile-menu">
-		<ul class="flex flex-col gap-3">
+	<div class="absolute top-full left-0 right-0 bg-bg-primary shadow-xl p-6 z-[1000] animate-in slide-in-from-top-2 duration-200"
+			 id="mobile-menu">
+		<ul class="flex flex-col gap-3 list-none mb-6">
 			@for (item of navigationLinks(); track item.label) {
 				<li>
 					<a (click)="navigateTo(item.link)"
+						 (keydown.enter)="navigateTo(item.link)"
+						 (keydown.space)="navigateTo(item.link)"
 						 [attr.aria-current]="currentRoute() === item.link ? 'page' : null"
+						 [class]="currentRoute() === item.link ? 'flex items-center gap-3 text-brand-primary bg-bg-tertiary px-4 py-3 rounded-md cursor-pointer transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-secondary' : 'flex items-center gap-3 text-text-primary hover:text-brand-primary hover:bg-bg-tertiary px-4 py-3 rounded-md cursor-pointer transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-secondary'"
+						 tabindex="0"
 					>
 						@if (item.icon) {
-							<fa-icon [icon]="item.icon"></fa-icon>
+							<fa-icon [icon]="item.icon" class="text-lg"></fa-icon>
 						}
-						<span>{{ item.label | translate }}</span>
+						<span class="font-medium text-base">{{ item.label | translate }}</span>
 					</a>
 				</li>
 			}
 		</ul>
-		<div>
+		<div class="pt-4 border-t border-bg-tertiary">
 			<app-language-selector></app-language-selector>
 		</div>
 	</div>

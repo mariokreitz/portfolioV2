@@ -1,23 +1,31 @@
-<div class="relative inline-block text-left">
+<div class="relative inline-block text-left min-w-[100px]">
 	<button (click)="toggleLanguageSelectionMenu()"
 					(keydown)="onToggleButtonKeydown($event)"
+					[attr.aria-expanded]="isLanguageSelectionOpen()"
+					[class]="isLanguageSelectionOpen() ? 'flex items-center gap-2 px-4 py-2 rounded-md bg-bg-tertiary text-text-primary font-medium border border-transparent transition-colors duration-200 ring-2 ring-brand-primary focus-visible:outline-none' : 'flex items-center gap-2 px-4 py-2 rounded-md bg-bg-secondary text-text-primary hover:bg-bg-tertiary font-medium border border-transparent hover:border-bg-tertiary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary'"
+					aria-haspopup="menu"
+					aria-label="Select language"
 					id="toggle-btn"
 					type="button">
-		<fa-icon [icon]="languageIcon" />
-		<span>{{ currentLanguage() | uppercase }}</span>
+		<fa-icon [icon]="languageIcon" class="text-base" />
+		<span class="text-sm font-semibold">{{ currentLanguage() | uppercase }}</span>
 	</button>
 
 	@if (isLanguageSelectionOpen()) {
-		<div class="absolute z-10 right-0 bg-bg-secondary" role="menu">
+		<div aria-labelledby="toggle-btn"
+				 class="absolute z-[1000] right-0 mt-2 bg-bg-secondary rounded-md shadow-lg border border-bg-tertiary min-w-[150px] animate-in fade-in-0 slide-in-from-top-2 duration-200"
+				 role="menu">
 			@for (lang of languages; track lang) {
 				<a (click)="selectLanguage(lang)"
 					 (keydown)="onMenuItemKeydown($event, lang)"
-					 class="p-4 w-full inline-block hover:bg-bg-tertiary"
+					 [class]="$first && $last ? 'p-4 w-full inline-block cursor-pointer text-text-primary hover:text-brand-primary hover:bg-bg-tertiary transition-colors duration-150 rounded-md focus-visible:outline-none focus-visible:bg-bg-tertiary focus-visible:text-brand-primary' : $first ? 'p-4 w-full inline-block cursor-pointer text-text-primary hover:text-brand-primary hover:bg-bg-tertiary transition-colors duration-150 rounded-t-md focus-visible:outline-none focus-visible:bg-bg-tertiary focus-visible:text-brand-primary' : $last ? 'p-4 w-full inline-block cursor-pointer text-text-primary hover:text-brand-primary hover:bg-bg-tertiary transition-colors duration-150 rounded-b-md focus-visible:outline-none focus-visible:bg-bg-tertiary focus-visible:text-brand-primary' : 'p-4 w-full inline-block cursor-pointer text-text-primary hover:text-brand-primary hover:bg-bg-tertiary transition-colors duration-150 focus-visible:outline-none focus-visible:bg-bg-tertiary focus-visible:text-brand-primary'"
 					 id="lang-option-{{ lang }}"
-					 role="menuitem">
+					 role="menuitem"
+					 tabindex="0">
 					{{ ('languageSelector.options.' + lang) | translate }}
 				</a>
 			}
 		</div>
 	}
 </div>
+

@@ -19,7 +19,7 @@ import { LanguageSelector } from '../../../language-selector/language-selector';
     ],
     templateUrl: './mobile-navigation.html',
     styleUrl: './mobile-navigation.css',
-    host: { class: 'sm:hidden block' },
+    host: { class: 'sm:hidden block relative' },
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MobileNavigation {

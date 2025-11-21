@@ -1,15 +1,20 @@
-<nav class="flex justify-between items-center py-4">
-	<a [href]="'/'">
-		<app-image [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
+<nav class="flex justify-between items-center py-4 container mx-auto px-4">
+	<a class="flex items-center" href="/">
+		<app-image [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" class="h-12 w-auto" />
 	</a>
-	<ul class="flex items-center gap-8">
+	<ul class="flex items-center gap-8 list-none">
 		@for (item of navigationLinks(); track item.label) {
 			<li>
-				<a (click)="navigateTo(item.link)">
+				<a (click)="navigateTo(item.link)"
+					 (keydown.enter)="navigateTo(item.link)"
+					 (keydown.space)="navigateTo(item.link)"
+					 [attr.aria-current]="currentRoute() === item.link ? 'page' : null"
+					 [class]="currentRoute() === item.link ? 'flex items-center gap-2 text-brand-primary bg-bg-secondary px-4 py-2 rounded-md cursor-pointer transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary' : 'flex items-center gap-2 text-text-primary hover:text-brand-primary hover:bg-bg-secondary px-4 py-2 rounded-md cursor-pointer transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary'"
+					 tabindex="0">
 					@if (item.icon) {
-						<fa-icon [icon]="item.icon"></fa-icon>
+						<fa-icon [icon]="item.icon" class="text-lg"></fa-icon>
 					}
-					<span>{{ item.label | translate }}</span>
+					<span class="font-medium">{{ item.label | translate }}</span>
 				</a>
 			</li>
 		}
