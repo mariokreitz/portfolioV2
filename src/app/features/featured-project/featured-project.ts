@@ -1,13 +1,12 @@
 import { ChangeDetectionStrategy, Component, computed, input, type InputSignal, type Signal } from '@angular/core';
-import { SliderImages } from '../../shared/components/slider/slider-images/slider-images';
 import type { FeaturedProjectsConfig } from '../../shared/models/configs';
 import type { ProjectItem } from '../../shared/models/project-item';
+import { SliderImages } from '../slider-image/slider-images';
 
 @Component({
     selector: 'app-featured-project',
     imports: [
         SliderImages,
-
     ],
     templateUrl: './featured-project.html',
     styleUrls: [ './featured-project.css' ],

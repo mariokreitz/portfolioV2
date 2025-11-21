@@ -10,9 +10,9 @@ import {
     signal,
     type WritableSignal,
 } from '@angular/core';
-import type { ProjectItem } from '../../../models/project-item';
-import { SliderControls } from '../slider-controls/slider-controls';
-import { SliderProgressbar } from '../slider-progressbar/slider-progressbar';
+import type { ProjectItem } from '../../shared/models/project-item';
+import { SliderControls } from './slider-controls/slider-controls';
+import { SliderProgressbar } from './slider-progressbar/slider-progressbar';
 
 @Component({
     selector: 'app-slider-images',
