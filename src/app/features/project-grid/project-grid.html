@@ -11,7 +11,7 @@
 			@for (project of projects(); track project.id) {
 				<article (keydown)="onCardKeydown($event, project.url)"
 								 aria-label="Project: {{ project.name }} - {{ project.description }}"
-								 class="group block rounded-lg border border-slate-800 bg-slate-900 p-3 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+								 class="group block rounded-lg border border-slate-800 bg-slate-900 p-3 shadow-sm hover:shadow-lg hover:shadow-brand-primary/10 hover:border-brand-primary/50 hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary transition-all duration-200"
 								 role="article"
 								 tabindex="0">
 					@if (project.url && project.url.startsWith('/')) {
@@ -19,7 +19,7 @@
 							<div class="aspect-[16/9] mb-3 bg-slate-800 rounded overflow-hidden">
 								<img [ngSrc]="project.imgSrc || fallbackImage"
 										 alt="Thumbnail for {{ project.name }}"
-										 class="w-full h-full object-cover"
+										 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
 										 decoding="async"
 										 height="360"
 										 loading="lazy"
@@ -27,10 +27,10 @@
 							</div>
 							<div class="flex items-start justify-between">
 								<div>
-									<h3 class="text-sm font-semibold text-slate-100">{{ project.name }}</h3>
+									<h3 class="text-sm font-semibold text-slate-100 group-hover:text-brand-primary transition-colors">{{ project.name }}</h3>
 									<p class="mt-1 text-xs text-slate-300">{{ project.description }}</p>
 								</div>
-								<span [class]="'ml-3 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ' + (project.status === 'released' ? 'bg-emerald-900/30 text-emerald-300' : project.status === 'in-progress' ? 'bg-amber-900/30 text-amber-300' : 'bg-slate-700/30 text-slate-300')"
+								<span [class]="'ml-3 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium border ' + (project.status === 'released' ? 'bg-emerald-900/30 text-emerald-300 border-emerald-500/30' : project.status === 'in-progress' ? 'bg-amber-900/30 text-amber-300 border-amber-500/30' : 'bg-slate-700/30 text-slate-300 border-slate-500/30')"
 											aria-hidden="true">{{ project.status }}</span>
 							</div>
 						</a>
@@ -39,7 +39,7 @@
 							<div class="aspect-[16/9] mb-3 bg-slate-800 rounded overflow-hidden">
 								<img [ngSrc]="project.imgSrc || fallbackImage"
 										 alt="Thumbnail for {{ project.name }}"
-										 class="w-full h-full object-cover object-left"
+										 class="w-full h-full object-cover object-left group-hover:scale-110 transition-transform duration-300"
 										 decoding="async"
 										 height="360"
 										 loading="lazy"
@@ -47,10 +47,10 @@
 							</div>
 							<div class="flex items-start justify-between">
 								<div>
-									<h3 class="text-sm font-semibold text-slate-100">{{ project.name }}</h3>
+									<h3 class="text-sm font-semibold text-slate-100 group-hover:text-brand-primary transition-colors">{{ project.name }}</h3>
 									<p class="mt-1 text-xs text-slate-300">{{ project.description }}</p>
 								</div>
-								<span [class]="'ml-3 inline-flex text-nowrap items-center rounded-full px-2.5 py-0.5 text-xs font-medium ' + (project.status === 'released' ? 'bg-emerald-900/30 text-emerald-300' : project.status === 'in-progress' ? 'bg-amber-900/30 text-amber-300' : 'bg-slate-700/30 text-slate-300')"
+								<span [class]="'ml-3 inline-flex text-nowrap items-center rounded-full px-2.5 py-0.5 text-xs font-medium border ' + (project.status === 'released' ? 'bg-emerald-900/30 text-emerald-300 border-emerald-500/30' : project.status === 'in-progress' ? 'bg-amber-900/30 text-amber-300 border-amber-500/30' : 'bg-slate-700/30 text-slate-300 border-slate-500/30')"
 											aria-hidden="true"> {{ project.status }}
 								</span>
 							</div>

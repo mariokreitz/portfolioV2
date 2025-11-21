@@ -5,7 +5,7 @@
 						(click)="goToSlide($index)"
 						[attr.aria-current]="idx === currentIndex() ? 'true' : null"
 						[attr.aria-label]="'app.shared.slider.controls.go-to' | translate : { name: bullet.name }"
-						[class]="('inline-flex items-center justify-center w-4 h-4 rounded-full border shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 transition-transform duration-200 ' + (idx === currentIndex() ? 'bg-indigo-600 border-indigo-600 scale-110' : 'bg-slate-600 border-slate-500'))"
+						[class]="('inline-flex items-center justify-center w-4 h-4 rounded-full border shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary transition-all duration-200 ' + (idx === currentIndex() ? 'bg-brand-primary border-brand-primary scale-110 shadow-brand-primary/50' : 'bg-slate-600 border-slate-500 hover:bg-slate-500 hover:border-slate-400 hover:scale-105 active:scale-95'))"
 						type="button"></button>
 		}
 	</div>

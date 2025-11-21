@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-    /* Custom Colors */
-    --color-brand-primary: #0A84FF;
-    --color-brand-secondary: #4f46e5;
-    --color-brand-dark: #6d28d9;
+    /* Custom Colors - WCAG AA Compliant */
+    --color-brand-primary: #3b9aff;
+    --color-brand-secondary: #6366f1;
+    --color-brand-dark: #8b5cf6;
+    --color-brand-hover: #5db0ff;
+    --color-brand-active: #1e7ed9;
     /* Background Colors */
-    --color-bg-primary: #030303; /* slate-1000 */
-    --color-bg-secondary: #1e293b; /* slate-800 */
-    --color-bg-tertiary: #334155; /* slate-700 */
+    --color-bg-primary: #030303;
+    --color-bg-secondary: #1e293b;
+    --color-bg-tertiary: #334155;
+    --color-bg-hover: #475569;
     /* Text Colors */
     --color-text-primary: #f1f5f9;
-    --color-text-secondary: #cbd5e1;
-    --color-text-muted: #94a3b8;
+    --color-text-secondary: #e2e8f0;
+    --color-text-muted: #cbd5e1;
     /* Focus/Outline Colors */
-    --color-focus: #0A84FF;
+    --color-focus: #3b9aff;
     /* Spacing Scale (custom values) */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -66,7 +69,11 @@ button, a {
 
 /* Custom Utility Classes */
 .active {
-    @apply bg-gradient-to-r from-slate-900 via-purple-700 to-indigo-600;
+    @apply bg-gradient-to-r from-slate-900 via-brand-dark to-brand-secondary;
+}
+
+.link-underline {
+    @apply underline decoration-2 underline-offset-4 decoration-brand-primary hover:decoration-brand-hover transition-colors;
 }
 
 .project-tag {
@@ -97,6 +104,17 @@ button, a {
 
 .shake-vertical {
     animation: shake-vertical 6s cubic-bezier(0.455, 0.03, 0.515, 0.955) both infinite;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 .float-smooth {

@@ -1,15 +1,17 @@
 <footer class="flex flex-col gap-4 border-t-[1px] border-t-white/15 py-6">
 	<div class="flex justify-between items-center ">
-		<a class="flex items-center" href="/">
+		<a aria-label="Navigate to homepage"
+			 class="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary rounded-md transition-transform hover:scale-105 active:scale-95"
+			 href="/">
 			<app-image [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" class="h-12 w-auto" />
 		</a>
-		<nav>
-			<ul class="flex gap-2  border-[1px] border-bg-secondary p-2 rounded-md">
+		<nav aria-label="Social media links">
+			<ul class="flex gap-2 border-[1px] border-bg-secondary p-2 rounded-md">
 				@for (item of socialLinks; track $index) {
-					<li class="bg-gradient-to-t from-bg-primary to-bg-tertiary flex items-center justify-center w-10 h-10 rounded-sm">
-						<a [href]="item.link"
-							 [title]="item.label"
-							 class="text-brand-primary w-full flex-1 h-full flex items-center justify-center"
+					<li class="bg-gradient-to-t from-bg-primary to-bg-tertiary flex items-center justify-center w-10 h-10 rounded-sm hover:from-bg-secondary hover:to-bg-hover transition-colors">
+						<a [attr.aria-label]="item.label + ' (opens in new tab)'"
+							 [href]="item.link"
+							 class="text-brand-primary hover:text-brand-hover active:text-brand-active w-full flex-1 h-full flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary rounded-sm transition-all"
 							 rel="noopener noreferrer"
 							 target="_blank">
 							<fa-icon [icon]="item.icon" class="text-lg"></fa-icon>
@@ -21,13 +23,13 @@
 	</div>
 	<div class="flex justify-between items-center gap-4">
 		<p class="text-white/60">{{ "app.madeWith"|translate }}</p>
-		<nav>
+		<nav aria-label="Footer navigation">
 			<ul class="flex gap-2">
 				@for (item of footerLinks; track $index) {
 					<li>
-						<a [href]="item.link"
-							 [title]="item.label"
-							 class="text-white/60 w-full flex-1 h-full flex items-center justify-center">
+						<a [attr.aria-label]="item.label"
+							 [href]="item.link"
+							 class="text-white/60 hover:text-brand-primary active:text-brand-hover w-full flex-1 h-full flex items-center justify-center px-3 py-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary transition-colors underline-offset-4 hover:underline">
 							{{ item.label | translate }}
 						</a>
 					</li>
