@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, input, type InputSignal, type Signal } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { TranslatePipe } from '@ngx-translate/core';
-import { Icon } from '../../../../../shared/components/icon/icon';
+import { Image } from '../../../../../shared/components/image/image';
 import type { NavigationItem } from '../../../../models/navigation-item';
 import { LangNavigatorService } from '../../../../services/lang-navigator';
 import { LanguageSelector } from '../../../language-selector/language-selector';
@@ -12,7 +12,7 @@ import { LanguageSelector } from '../../../language-selector/language-selector';
         FaIconComponent,
         TranslatePipe,
         LanguageSelector,
-        Icon,
+        Image,
     ],
     templateUrl: './desktop-navigation.html',
     styleUrl: './desktop-navigation.css',

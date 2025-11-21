@@ -1,8 +1,8 @@
 <nav class="flex justify-between items-center py-4">
 	<a [href]="'/'">
-		<app-icon [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
+		<app-image [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" />
 	</a>
-	<ul class="flex items-center gap-6">
+	<ul class="flex items-center gap-8">
 		@for (item of navigationLinks(); track item.label) {
 			<li>
 				<a (click)="navigateTo(item.link)">
