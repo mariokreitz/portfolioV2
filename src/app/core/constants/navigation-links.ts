@@ -1,3 +1,4 @@
+import { faHackerrank } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import type { NavigationItem } from '../models/navigation-item';
 
@@ -25,5 +26,10 @@ export const socialLinks: NavigationItem[] = [
         label: 'GitHub',
         link: 'https://www.github.com/mariokreitz',
         icon: faGithub,
+    },
+    {
+        label: 'TryHackMe',
+        link: 'https://www.tryhackme.com/p/Hogg3r',
+        icon: faHackerrank,
     },
 ];
