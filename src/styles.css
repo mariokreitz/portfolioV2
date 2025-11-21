@@ -2,19 +2,19 @@
 
 @theme {
     /* Custom Colors */
-    --color-brand-primary: #7c3aed; /* purple-600 */
-    --color-brand-secondary: #4f46e5; /* indigo-600 */
-    --color-brand-dark: #6d28d9; /* purple-700 */
+    --color-brand-primary: #0A84FF;
+    --color-brand-secondary: #4f46e5;
+    --color-brand-dark: #6d28d9;
     /* Background Colors */
     --color-bg-primary: #030303; /* slate-1000 */
     --color-bg-secondary: #1e293b; /* slate-800 */
     --color-bg-tertiary: #334155; /* slate-700 */
     /* Text Colors */
-    --color-text-primary: #f1f5f9; /* slate-100 */
-    --color-text-secondary: #cbd5e1; /* slate-300 */
-    --color-text-muted: #94a3b8; /* slate-400 */
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #cbd5e1;
+    --color-text-muted: #94a3b8;
     /* Focus/Outline Colors */
-    --color-focus: #6366f1; /* indigo-500 */
+    --color-focus: #0A84FF;
     /* Spacing Scale (custom values) */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
