@@ -1,5 +1,6 @@
-import { faHackerrank } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import type { NavigationItem } from '../models/navigation-item';
 
 export const navigationLinks: NavigationItem[] = [
@@ -23,6 +24,11 @@ export const navigationLinks: NavigationItem[] = [
 
 export const socialLinks: NavigationItem[] = [
     {
+        label: 'LinkedIn',
+        link: 'https://www.linkedin.com/in/mario-kreitz/',
+        icon: faLinkedin,
+    },
+    {
         label: 'GitHub',
         link: 'https://www.github.com/mariokreitz',
         icon: faGithub,
@@ -30,6 +36,6 @@ export const socialLinks: NavigationItem[] = [
     {
         label: 'TryHackMe',
         link: 'https://www.tryhackme.com/p/Hogg3r',
-        icon: faHackerrank,
+        icon: faCloud,
     },
 ];

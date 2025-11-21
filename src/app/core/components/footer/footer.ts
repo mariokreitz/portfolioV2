@@ -1,24 +1,19 @@
-import { Component, inject } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { TranslatePipe } from '@ngx-translate/core';
-import { LangNavigatorService } from '../../services/lang-navigator';
+import { Component } from '@angular/core';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+import { Image } from '../../../shared/components/image/image';
+import { socialLinks } from '../../constants/navigation-links';
+import type { NavigationItem } from '../../models/navigation-item';
 
 @Component({
     selector: 'app-footer',
     imports: [
-        FontAwesomeModule,
-        TranslatePipe,
+        Image,
+        FaIconComponent,
     ],
     templateUrl: './footer.html',
     styleUrl: './footer.css',
 })
 export class Footer {
-    protected readonly faGithub = faGithub;
 
-    private readonly langNavigator = inject(LangNavigatorService);
-
-    async navigateTo(link: string): Promise<void> {
-        await this.langNavigator.navigateTo(link);
-    }
+    protected readonly socialLinks: NavigationItem[] = socialLinks;
 }
