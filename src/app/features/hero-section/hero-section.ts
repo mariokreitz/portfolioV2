@@ -17,5 +17,7 @@ import { PageSubheadline } from '../../shared/components/page-subheadline/page-s
     host: { 'class': 'relative w-full h-full flex' },
 })
 export class HeroSection {
-
+    public mailTo(): void {
+        window.location.href = 'mailto:mario.kreitz@web.de';
+    }
 }

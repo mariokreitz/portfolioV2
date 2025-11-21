@@ -1,7 +1,7 @@
 <div class="flex flex-2 flex-col gap-8 max-w-3xl justify-center px-4 mx-auto">
 	<app-page-headline className="text-5xl sm:text-6xl lg:text-7xl text-balance leading-tight" titleKey="hero.title" />
 	<app-page-subheadline className="text-lg sm:text-xl lg:text-2xl" titleKey="hero.subtitle" />
-	<app-button buttonType="button" titleKey="hero.cta" />
+	<app-button (click)="mailTo()" buttonType="button" titleKey="hero.cta" />
 </div>
 
 
