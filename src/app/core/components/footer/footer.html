@@ -9,7 +9,7 @@
 			<ul class="flex gap-2 border-[1px] border-bg-secondary p-2 rounded-md">
 				@for (item of socialLinks; track $index) {
 					<li class="bg-gradient-to-t from-bg-primary to-bg-tertiary flex items-center justify-center w-10 h-10 rounded-sm hover:from-bg-secondary hover:to-bg-hover transition-colors">
-						<a [attr.aria-label]="(getSocialMediaAriaLabel(item.label) | translate) + ' ' + ('accessibility.externalLink' | translate)"
+						<a [attr.aria-label]="(item.ariaLabelKey | translate) + ' ' + ('accessibility.externalLink' | translate)"
 							 [href]="item.link"
 							 class="text-brand-primary hover:text-brand-hover active:text-brand-active w-full flex-1 h-full flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary rounded-sm transition-all"
 							 rel="noopener noreferrer"

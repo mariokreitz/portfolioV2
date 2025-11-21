@@ -27,16 +27,19 @@ export const socialLinks: NavigationItem[] = [
         label: 'LinkedIn',
         link: 'https://www.linkedin.com/in/mario-kreitz/',
         icon: faLinkedin,
+        ariaLabelKey: 'accessibility.socialMedia.linkedin',
     },
     {
         label: 'GitHub',
         link: 'https://www.github.com/mariokreitz',
         icon: faGithub,
+        ariaLabelKey: 'accessibility.socialMedia.github',
     },
     {
         label: 'TryHackMe',
         link: 'https://www.tryhackme.com/p/Hogg3r',
         icon: faCloud,
+        ariaLabelKey: 'accessibility.socialMedia.tryhackme',
     },
 ];
 

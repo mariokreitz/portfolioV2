@@ -9,5 +9,5 @@ export interface NavigationItem {
     link: Url | Route;
     icon?: IconDefinition;
     children?: NavigationItem[];
+    ariaLabelKey?: string; // Optional pre-computed translation key for aria-label
 }
-
