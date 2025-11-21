@@ -1,6 +1,8 @@
 <footer class=" border-t-[1px] border-t-white/15">
 	<div class="flex justify-between items-center py-6">
-		<app-image [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" class="h-12 w-auto" />
+		<a class="flex items-center" href="/">
+			<app-image [imgAlt]="'MK Logo'" [imgSrc]="'/assets/images/mk_logo.png'" class="h-12 w-auto" />
+		</a>
 		<nav>
 			<ul class="flex gap-2  border-[1px] border-bg-secondary p-2 rounded-md">
 				@for (social of socialLinks; track $index) {

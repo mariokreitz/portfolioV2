@@ -99,6 +99,15 @@ button, a {
     animation: shake-vertical 6s cubic-bezier(0.455, 0.03, 0.515, 0.955) both infinite;
 }
 
+.float-smooth {
+    animation: smooth-float 3s ease-in-out infinite;
+}
+
+.sonar-ping {
+    animation: sonar-ping 2s ease-out infinite;
+}
+
+
 @keyframes shake-vertical {
     0% {
         transform: translateY(0);
@@ -113,3 +122,32 @@ button, a {
         transform: translateY(0);
     }
 }
+
+@keyframes smooth-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes sonar-ping {
+    0% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7),
+        0 0 0 0 rgba(99, 102, 241, 0.7);
+    }
+    40% {
+        box-shadow: 0 0 0 15px rgba(99, 102, 241, 0),
+        0 0 0 0 rgba(99, 102, 241, 0.7);
+    }
+    80% {
+        box-shadow: 0 0 0 20px rgba(99, 102, 241, 0),
+        0 0 0 20px rgba(99, 102, 241, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0),
+        0 0 0 20px rgba(99, 102, 241, 0);
+    }
+}
+
