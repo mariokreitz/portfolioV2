@@ -3,7 +3,7 @@ import { FaIconComponent, type IconDefinition } from '@fortawesome/angular-fonta
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { TranslatePipe } from '@ngx-translate/core';
-import { Icon } from '../../../../../shared/components/icon/icon';
+import { Image } from '../../../../../shared/components/image/image';
 import type { NavigationItem } from '../../../../models/navigation-item';
 import { LangNavigatorService } from '../../../../services/lang-navigator';
 import { LanguageSelector } from '../../../language-selector/language-selector';
@@ -11,7 +11,7 @@ import { LanguageSelector } from '../../../language-selector/language-selector';
 @Component({
     selector: 'app-mobile-navigation',
     imports: [
-        Icon,
+        Image,
         FaIconComponent,
         LanguageSelector,
         TranslatePipe,
