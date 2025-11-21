@@ -1,6 +1,7 @@
 <img
 			[attr.alt]="imgAlt()"
 			[attr.aria-hidden]="(imgAlt() === '' || imgAlt() === null) ? 'true' : null"
+			[class]="iconClasses()"
 			[height]="imgHeight()"
 			[loading]="'lazy'"
 			[ngSrc]="imgSrc()"
