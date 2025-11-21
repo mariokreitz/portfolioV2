@@ -94,3 +94,22 @@ button, a {
 .transition-fast {
     transition: all var(--transition-fast);
 }
+
+.shake-vertical {
+    animation: shake-vertical 6s cubic-bezier(0.455, 0.03, 0.515, 0.955) both infinite;
+}
+
+@keyframes shake-vertical {
+    0% {
+        transform: translateY(0);
+    }
+    3%, 10%, 17%, 23%, 30% {
+        transform: translateY(-10px);
+    }
+    7%, 13%, 20%, 27% {
+        transform: translateY(10px);
+    }
+    33%, 100% {
+        transform: translateY(0);
+    }
+}
