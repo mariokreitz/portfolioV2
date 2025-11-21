@@ -14,7 +14,7 @@ import { PageSubheadline } from '../../shared/components/page-subheadline/page-s
     ],
     templateUrl: './hero-section.html',
     styleUrl: './hero-section.css',
-    host: { 'class': 'relative w-full h-full flex' },
+    host: { 'class': 'relative w-full h-full flex flex-col md:flex-row' },
 })
 export class HeroSection {
     public mailTo(): void {

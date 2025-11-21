@@ -13,7 +13,7 @@
 
 	@if (isLanguageSelectionOpen()) {
 		<div aria-labelledby="toggle-btn"
-				 class="absolute z-[1000] right-0 mt-2 bg-bg-secondary rounded-md shadow-lg border border-bg-tertiary min-w-[150px] animate-in fade-in-0 slide-in-from-top-2 duration-200"
+				 class="absolute z-[1000] sm:right-0 mt-2 bg-bg-secondary rounded-md shadow-lg border border-bg-tertiary min-w-[150px] animate-in fade-in-0 slide-in-from-top-2 duration-200"
 				 role="menu">
 			@for (lang of languages; track lang) {
 				<a (click)="selectLanguage(lang)"
