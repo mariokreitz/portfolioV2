@@ -17,5 +17,4 @@ import { Image } from '../../shared/components/image/image';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Home {
-
 }
